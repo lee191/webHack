@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.security.MessageDigest" %>
+<%@ page import="javax.crypto.spec.SecretKeySpec" %>
+<%@ page import="java.security.Key" %>
 <%@ page import="io.jsonwebtoken.*" %>
+<%@ page import="io.jsonwebtoken.security.Keys" %>
+
 <%
     String username = request.getParameter("username");
     String password = request.getParameter("password");
@@ -13,7 +17,7 @@
     boolean isValidUser = false;
 
     try {
-        // 비밀번호를 MD5로 해시 (테스트 목적)
+        // 비밀번호를 MD5로 해시
         MessageDigest md = MessageDigest.getInstance("MD5");
         md.update(password.getBytes());
         byte[] digest = md.digest();
@@ -27,9 +31,8 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
 
-        // 취약한 방식: 사용자 입력값을 문자열로 직접 삽입 → SQL Injection 발생 가능
+        // SQL Injection 취약한 방식 (테스트용)
         String sql = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + hashedPassword + "'";
-
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
 
@@ -44,30 +47,33 @@
         e.printStackTrace();
     }
 
-    String secretKey = "yourSecretKey";
-
     if (isValidUser) {
-        // JWT 토큰 생성
+        // HS256에 적합한 키 생성 (고정된 키 사용 가능)
+        byte[] keyBytes = "thisIsASecretKeyThatIsAtLeast32Bytes!".getBytes("UTF-8");
+        Key signingKey = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
+
+        // JWT 생성
         String jwtToken = Jwts.builder()
             .setSubject(username)
             .setIssuedAt(new java.util.Date())
-            .setExpiration(new java.util.Date(System.currentTimeMillis() + 3600000)) // 1시간 유효
-            .signWith(SignatureAlgorithm.HS256, secretKey)
+            .setExpiration(new java.util.Date(System.currentTimeMillis() + 3600000))
+            .signWith(signingKey, SignatureAlgorithm.HS256)
             .compact();
 
-        // JWT 토큰을 쿠키에 저장
+        // 쿠키에 저장
         Cookie authCookie = new Cookie("authToken", jwtToken);
         authCookie.setHttpOnly(true);
-        authCookie.setMaxAge(3600); // 1시간
+        authCookie.setMaxAge(3600);
         response.addCookie(authCookie);
 
-        response.sendRedirect("board.jsp");
+
+        response.sendRedirect("index.jsp");
     } else {
 %>
-        <script>
-            alert("아이디 또는 비밀번호가 잘못되었습니다.");
-            history.back();
-        </script>
+    <script>
+        alert("아이디 또는 비밀번호가 잘못되었습니다.");
+        history.back();
+    </script>
 <%
     }
 %>

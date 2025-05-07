@@ -1,67 +1,78 @@
-/* 전체 레이아웃 및 배경 */
+/* 전체 페이지 레이아웃 및 배경 */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1d2b64, #f8cdda);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* 상단 헤더 영역 */
+/* 페이지 타이틀 */
 h1 {
-    background-color: #1976d2;
-    color: white;
-    padding: 30px 0;
-    margin: 0;
-    font-size: 2.2em;
-    letter-spacing: 1px;
+    color: #ffffff;
+    font-size: 3em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    animation: slideDown 0.6s ease-out;
 }
 
-/* 네비게이션 영역 */
+/* 내비게이션 메뉴 */
 nav {
-    background-color: #263238;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px);
+    animation: popIn 0.5s ease-out;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
     padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 25px;
+    margin: 0;
+    display: flex;
+    gap: 30px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
+    font-size: 1.2em;
     font-weight: 600;
-    font-size: 1.1em;
-    padding: 10px 15px;
+    padding: 10px 18px;
+    border-radius: 8px;
     transition: all 0.3s ease;
-    border-radius: 5px;
+    background-color: rgba(255,255,255,0.05);
 }
 
 nav ul li a:hover {
-    background-color: #1e88e5;
+    background-color: rgba(255,255,255,0.25);
+    color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* 반응형 중앙 정렬 콘텐츠 */
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    text-align: center;
-}
-
-/* 링크 강조 색상 */
+/* 링크 기본 */
 a {
-    color: #1565c0;
+    text-decoration: none;
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
