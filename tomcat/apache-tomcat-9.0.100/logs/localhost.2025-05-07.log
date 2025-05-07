@@ -1,0 +1,428 @@
+07-May-2025 15:02:40.842 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-May-2025 15:02:40.842 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-May-2025 15:02:40.845 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5d5d9e5')
+07-May-2025 15:26:41.061 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+07-May-2025 15:26:41.061 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+07-May-2025 15:26:49.398 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-May-2025 15:26:49.398 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-May-2025 15:26:49.400 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@131d977f')
+07-May-2025 15:36:51.082 정보 [Catalina-utility-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+07-May-2025 15:36:51.083 정보 [Catalina-utility-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+07-May-2025 15:42:59.113 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-May-2025 15:42:59.115 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-May-2025 15:42:59.118 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@197d5a87')
+07-May-2025 16:12:45.741 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+07-May-2025 16:12:45.741 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+07-May-2025 16:12:52.286 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-May-2025 16:12:52.287 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-May-2025 16:12:52.288 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@9cc0505')
+07-May-2025 16:22:30.732 심각 [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [7] 행에서 오류가 발생했습니다.
+The method MD5(String) is undefined for the type processLogin_jsp
+4: <%
+5:     // 사용자 입력값 가져오기
+6:     String username = request.getParameter("username");
+7:     String password = MD5(request.getParameter("password"));
+8: 
+9:     // 데이터베이스 연결 정보
+10:     String dbURL = "jdbc:mysql://localhost:3306/my_database"; // DB URL
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [7] 행에서 오류가 발생했습니다.
+The method MD5(String) is undefined for the type processLogin_jsp
+4: <%
+5:     // 사용자 입력값 가져오기
+6:     String username = request.getParameter("username");
+7:     String password = MD5(request.getParameter("password"));
+8: 
+9:     // 데이터베이스 연결 정보
+10:     String dbURL = "jdbc:mysql://localhost:3306/my_database"; // DB URL
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+07-May-2025 16:24:36.174 심각 [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [7] 행에서 오류가 발생했습니다.
+The method MD5(String) is undefined for the type processLogin_jsp
+4: <%
+5:     // 사용자 입력값 가져오기
+6:     String username = request.getParameter("username");
+7:     String password = MD5(request.getParameter("password"));
+8: 
+9:     // 데이터베이스 연결 정보
+10:     String dbURL = "jdbc:mysql://localhost:3306/my_database"; // DB URL
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [7] 행에서 오류가 발생했습니다.
+The method MD5(String) is undefined for the type processLogin_jsp
+4: <%
+5:     // 사용자 입력값 가져오기
+6:     String username = request.getParameter("username");
+7:     String password = MD5(request.getParameter("password"));
+8: 
+9:     // 데이터베이스 연결 정보
+10:     String dbURL = "jdbc:mysql://localhost:3306/my_database"; // DB URL
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+07-May-2025 16:24:41.053 심각 [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [7] 행에서 오류가 발생했습니다.
+The method MD5(String) is undefined for the type processLogin_jsp
+4: <%
+5:     // 사용자 입력값 가져오기
+6:     String username = request.getParameter("username");
+7:     String password = MD5(request.getParameter("password"));
+8: 
+9:     // 데이터베이스 연결 정보
+10:     String dbURL = "jdbc:mysql://localhost:3306/my_database"; // DB URL
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [7] 행에서 오류가 발생했습니다.
+The method MD5(String) is undefined for the type processLogin_jsp
+4: <%
+5:     // 사용자 입력값 가져오기
+6:     String username = request.getParameter("username");
+7:     String password = MD5(request.getParameter("password"));
+8: 
+9:     // 데이터베이스 연결 정보
+10:     String dbURL = "jdbc:mysql://localhost:3306/my_database"; // DB URL
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+07-May-2025 16:24:50.769 심각 [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [7] 행에서 오류가 발생했습니다.
+The method MD5(String) is undefined for the type processLogin_jsp
+4: <%
+5:     // 사용자 입력값 가져오기
+6:     String username = request.getParameter("username");
+7:     String password = MD5(request.getParameter("password"));
+8: 
+9:     // 데이터베이스 연결 정보
+10:     String dbURL = "jdbc:mysql://localhost:3306/my_database"; // DB URL
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [7] 행에서 오류가 발생했습니다.
+The method MD5(String) is undefined for the type processLogin_jsp
+4: <%
+5:     // 사용자 입력값 가져오기
+6:     String username = request.getParameter("username");
+7:     String password = MD5(request.getParameter("password"));
+8: 
+9:     // 데이터베이스 연결 정보
+10:     String dbURL = "jdbc:mysql://localhost:3306/my_database"; // DB URL
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+07-May-2025 16:27:41.636 심각 [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [19] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved to a type
+16: 
+17:     try {
+18:         // 비밀번호를 MD5로 해시
+19:         MessageDigest md = MessageDigest.getInstance("MD5");
+20:         md.update(password.getBytes());
+21:         byte[] digest = md.digest();
+22:         StringBuilder sb = new StringBuilder();
+
+
+JSP 파일 [/processLogin.jsp]의 [19] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved
+16: 
+17:     try {
+18:         // 비밀번호를 MD5로 해시
+19:         MessageDigest md = MessageDigest.getInstance("MD5");
+20:         md.update(password.getBytes());
+21:         byte[] digest = md.digest();
+22:         StringBuilder sb = new StringBuilder();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [19] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved to a type
+16: 
+17:     try {
+18:         // 비밀번호를 MD5로 해시
+19:         MessageDigest md = MessageDigest.getInstance("MD5");
+20:         md.update(password.getBytes());
+21:         byte[] digest = md.digest();
+22:         StringBuilder sb = new StringBuilder();
+
+
+JSP 파일 [/processLogin.jsp]의 [19] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved
+16: 
+17:     try {
+18:         // 비밀번호를 MD5로 해시
+19:         MessageDigest md = MessageDigest.getInstance("MD5");
+20:         md.update(password.getBytes());
+21:         byte[] digest = md.digest();
+22:         StringBuilder sb = new StringBuilder();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+07-May-2025 16:27:48.183 심각 [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [19] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved to a type
+16: 
+17:     try {
+18:         // 비밀번호를 MD5로 해시
+19:         MessageDigest md = MessageDigest.getInstance("MD5");
+20:         md.update(password.getBytes());
+21:         byte[] digest = md.digest();
+22:         StringBuilder sb = new StringBuilder();
+
+
+JSP 파일 [/processLogin.jsp]의 [19] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved
+16: 
+17:     try {
+18:         // 비밀번호를 MD5로 해시
+19:         MessageDigest md = MessageDigest.getInstance("MD5");
+20:         md.update(password.getBytes());
+21:         byte[] digest = md.digest();
+22:         StringBuilder sb = new StringBuilder();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/processLogin.jsp]의 [19] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved to a type
+16: 
+17:     try {
+18:         // 비밀번호를 MD5로 해시
+19:         MessageDigest md = MessageDigest.getInstance("MD5");
+20:         md.update(password.getBytes());
+21:         byte[] digest = md.digest();
+22:         StringBuilder sb = new StringBuilder();
+
+
+JSP 파일 [/processLogin.jsp]의 [19] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved
+16: 
+17:     try {
+18:         // 비밀번호를 MD5로 해시
+19:         MessageDigest md = MessageDigest.getInstance("MD5");
+20:         md.update(password.getBytes());
+21:         byte[] digest = md.digest();
+22:         StringBuilder sb = new StringBuilder();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
