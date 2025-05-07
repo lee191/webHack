@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.security.MessageDigest" %>
+<%@ page import="io.jsonwebtoken.*" %>
 <%
     String username = request.getParameter("username");
     String password = request.getParameter("password");
@@ -43,7 +44,23 @@
         e.printStackTrace();
     }
 
+    String secretKey = "yourSecretKey";
+
     if (isValidUser) {
+        // JWT 토큰 생성
+        String jwtToken = Jwts.builder()
+            .setSubject(username)
+            .setIssuedAt(new java.util.Date())
+            .setExpiration(new java.util.Date(System.currentTimeMillis() + 3600000)) // 1시간 유효
+            .signWith(SignatureAlgorithm.HS256, secretKey)
+            .compact();
+
+        // JWT 토큰을 쿠키에 저장
+        Cookie authCookie = new Cookie("authToken", jwtToken);
+        authCookie.setHttpOnly(true);
+        authCookie.setMaxAge(3600); // 1시간
+        response.addCookie(authCookie);
+
         response.sendRedirect("board.jsp");
     } else {
 %>
