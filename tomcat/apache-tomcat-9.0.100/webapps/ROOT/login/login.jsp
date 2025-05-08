@@ -17,6 +17,6 @@
         <br>
         <button type="submit">로그인</button>
     </form>
-    <a href="index.jsp">메인 페이지로 돌아가기</a>
+    <a href="/index.jsp">메인 페이지로 돌아가기</a>
 </body>
 </html>

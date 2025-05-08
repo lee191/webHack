@@ -1,0 +1,72 @@
+/* 전체 배경 및 기본 폰트 */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e3c72, #c9a7dc);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 제목 */
+h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 테이블 스타일 */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+table th, table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f0f0f0;
+    color: #333;
+    width: 20%;
+}
+
+/* 마지막 행 border 제거 */
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* 링크 버튼 */
+/* 전체 링크 기본 스타일 제거 */
+a {
+    color: inherit;
+}
+
+/* 일반 버튼 링크 (목록으로 돌아가기 등) */
+a.nav-link {
+    margin-top: 20px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #7e57c2;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a.nav-link:hover {
+    background-color: #5e35b1;
+    transform: scale(1.03);
+}

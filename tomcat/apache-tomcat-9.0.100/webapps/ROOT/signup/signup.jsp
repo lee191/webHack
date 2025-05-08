@@ -23,7 +23,7 @@
 
         <button type="submit">회원가입</button>
     </form>
-    <a href="login.jsp">로그인 페이지로 돌아가기</a>
-    <a href="index.jsp">메인 페이지로 돌아가기</a>
+    <a href="/login/login.jsp">로그인 페이지로 돌아가기</a>
+    <a href="/index.jsp">메인 페이지로 돌아가기</a>
 </body>
 </html>

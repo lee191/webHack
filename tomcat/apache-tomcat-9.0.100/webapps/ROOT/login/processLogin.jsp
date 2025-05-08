@@ -64,10 +64,11 @@
         Cookie authCookie = new Cookie("authToken", jwtToken);
         authCookie.setHttpOnly(true);
         authCookie.setMaxAge(3600);
+        authCookie.setPath("/");
         response.addCookie(authCookie);
 
 
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("../index.jsp");
     } else {
 %>
     <script>

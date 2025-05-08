@@ -52,12 +52,12 @@
 
     <nav>
         <ul>
-            <li><a href="board.jsp">게시판</a></li>
+            <li><a href="board/board.jsp">게시판</a></li>
             <% if (isLoggedIn) { %>
-                <li><a href="logout.jsp">로그아웃</a></li>
+                <li><a href="login/logout.jsp">로그아웃</a></li>
             <% } else { %>
-                <li><a href="login.jsp">로그인</a></li>
-                <li><a href="signup.jsp">회원가입</a></li>
+                <li><a href="login/login.jsp">로그인</a></li>
+                <li><a href="signup/signup.jsp">회원가입</a></li>
             <% } %>
         </ul>
     </nav>

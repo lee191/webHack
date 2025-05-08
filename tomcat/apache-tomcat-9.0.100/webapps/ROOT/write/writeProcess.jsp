@@ -49,7 +49,12 @@
     String filename = null;
 
     // 파일 업로드 처리
-    String uploadPath = application.getRealPath("uploads");
+    String uploadPath = application.getRealPath("/uploads");
+    // 업로드 경로 확인
+    if (uploadPath == null) {
+        out.println("<script>alert('업로드 경로를 찾을 수 없습니다.'); history.back();</script>");
+        return;
+    }
     File uploadDir = new File(uploadPath);
     if (!uploadDir.exists()) uploadDir.mkdir();
 
@@ -77,7 +82,7 @@
         pstmt.setString(4, filename);
 
         pstmt.executeUpdate();
-        out.println("<script>alert('게시글이 등록되었습니다.'); location.href='board.jsp';</script>");
+        out.println("<script>alert('게시글이 등록되었습니다.'); location.href='/board/board.jsp';</script>");
     } catch (Exception e) {
         out.println("<script>alert('DB 오류: " + e.getMessage() + "'); history.back();</script>");
     } finally {

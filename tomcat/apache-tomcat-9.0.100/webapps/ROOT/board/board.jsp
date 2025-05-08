@@ -29,10 +29,10 @@
             username = claims.getSubject();
             isAuthenticated = true;
         } catch (Exception e) {
-            out.println("<script>alert('로그인 인증 오류: " + e.getMessage() + "'); location.href='index.jsp';</script>");
+            out.println("<script>alert('로그인 인증 오류: " + e.getMessage() + "'); location.href='../index.jsp';</script>");
         }
     } else {
-        out.println("<script>alert('로그인 후 이용해주세요.'); location.href='index.jsp';</script>");
+        out.println("<script>alert('로그인 후 이용해주세요.'); location.href='/index.jsp';</script>");
     }
 
     String dbURL = "jdbc:mysql://localhost:3306/my_database";
@@ -55,9 +55,9 @@
     <h1>게시판</h1>
     <nav>
         <ul>
-            <li><a href="index.jsp">메인 페이지</a></li>
+            <li><a href="/index.jsp">메인 페이지</a></li>
             <li><a href="board.jsp">게시판</a></li>
-            <li><a href="logout.jsp">로그아웃</a></li>
+            <li><a href="/login/logout.jsp">로그아웃</a></li>
         </ul>
     </nav>
 
@@ -88,7 +88,7 @@
         <tr>
             <td><%= postId %></td>
             <td><%= writer %></td>
-            <td><a href="view.jsp?id=<%= postId %>"><%= title %></a></td>
+            <td><a href="../view/view.jsp?id=<%= postId %>"><%= title %></a></td>
             <td><%= created %></td>
         </tr>
 <%
@@ -110,8 +110,7 @@
     }
 %>
     </table>
-
-    <form action="write.jsp" method="get">
+    <form action="/write/write.jsp" method="get">
         <button type="submit">글쓰기</button>
     </form>
 </body>
