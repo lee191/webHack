@@ -67,9 +67,14 @@
         authCookie.setPath("/");
         response.addCookie(authCookie);
 
-
-        response.sendRedirect("../index.jsp");
-    } else {
+        // 관리자 페이지로 리다이렉트
+        if (username.equals("admin")) {
+            response.sendRedirect("/admin/admin.jsp");
+        } else {
+            response.sendRedirect("/index.jsp");
+        }
+    } 
+    else {
 %>
     <script>
         alert("아이디 또는 비밀번호가 잘못되었습니다.");

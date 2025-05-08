@@ -16,17 +16,16 @@
   limitations under the License.
 -->
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-  version="4.0"
-  metadata-complete="true">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0"
+         metadata-complete="true">
 
   <display-name>Welcome to Tomcat</display-name>
-  <description>
-     Welcome to Tomcat
-  </description>
-    <!-- JSP에 파일 업로드 지원 -->
+  <description>Welcome to Tomcat</description>
+
+  <!-- JSP에 파일 업로드 지원: /write/writeProcess.jsp -->
   <servlet>
     <servlet-name>WriteProcess</servlet-name>
     <jsp-file>/write/writeProcess.jsp</jsp-file>
@@ -41,6 +40,23 @@
   <servlet-mapping>
     <servlet-name>WriteProcess</servlet-name>
     <url-pattern>/write/writeProcess.jsp</url-pattern>
+  </servlet-mapping>
+
+  <!-- JSP에 파일 업로드 지원: /admin/board_list/add_process.jsp -->
+  <servlet>
+    <servlet-name>AddProcess</servlet-name>
+    <jsp-file>/admin/board_list/add_process.jsp</jsp-file>
+    <multipart-config>
+      <location>/tmp</location>
+      <max-file-size>10485760</max-file-size> <!-- 10MB -->
+      <max-request-size>20971520</max-request-size> <!-- 20MB -->
+      <file-size-threshold>0</file-size-threshold>
+    </multipart-config>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AddProcess</servlet-name>
+    <url-pattern>/admin/board_list/add_process.jsp</url-pattern>
   </servlet-mapping>
 
 </web-app>
