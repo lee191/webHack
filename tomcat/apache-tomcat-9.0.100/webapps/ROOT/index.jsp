@@ -44,22 +44,62 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>메인 페이지</title>
+    <title>GOODGAMES - 메인 페이지</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>환영합니다<% if (isLoggedIn) { %>, <%= username %>님!<% } %></h1>
 
-    <nav>
-        <ul>
-            <li><a href="board/board.jsp">게시판</a></li>
+    <!-- 상단 네비게이션 -->
+    <div class="navbar">
+        <div class="logo">GOOD<span class="white-text">GAMES</span></div>
+        <div class="navbar-right">
+            <a href="/board/board.jsp">BLOG</a>
+            <a href="#">STORE</a>
             <% if (isLoggedIn) { %>
-                <li><a href="login/logout.jsp">로그아웃</a></li>
+                <a href="/login/logout.jsp">LOGOUT</a>
             <% } else { %>
-                <li><a href="login/login.jsp">로그인</a></li>
-                <li><a href="signup/signup.jsp">회원가입</a></li>
+                <a href="/login/login.jsp">LOGIN</a>
+                <a href="/signup/signup.jsp">SIGNUP</a>
             <% } %>
-        </ul>
-    </nav>
+        </div>
+    </div>
+
+    <!-- 히어로 배너 영역 -->
+    <div class="hero">
+        <img src="/image/hero.jpg" alt="Hero Image" class="hero-img" />
+        <div class="hero-text">
+            <h2>AS WE PASSED, I REMARKED</h2>
+            <p>As we passed, I remarked a beautiful church-spire...</p>
+            <button>READ MORE</button>
+        </div>
+    </div>
+
+    <!-- 사용자 인사말 -->
+    <section class="welcome">
+        <h1>환영합니다<% if (isLoggedIn) { %>, <%= username %>님!<% } %></h1>
+    </section>
+
+    <!-- 게임 플랫폼 소개 -->
+    <div class="platforms">
+        <div class="platform">
+            <%-- PC 아이콘 이미지 삽입 --%>
+            <img src="/image/pc.png" alt="PC Icon" />
+            <div>PC</div>
+            <a href="/board/board.jsp">VIEW GAMES</a>
+        </div>
+        <div class="platform">
+            <%-- PS4 아이콘 이미지 삽입 --%>
+            <img src="/image/ps4.png" alt="PS4 Icon" />
+            <div>PS4</div>
+            <a href="/board/board.jsp">VIEW GAMES</a>
+        </div>
+        <div class="platform">
+            <%-- XBOX 아이콘 이미지 삽입 --%>
+            <img src="/image/xbox.png" alt="XBOX Icon" />
+            <div>XBOX</div>
+            <a href="/board/board.jsp">VIEW GAMES</a>
+        </div>
+    </div>
+
 </body>
 </html>

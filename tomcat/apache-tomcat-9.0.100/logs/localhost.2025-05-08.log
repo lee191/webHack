@@ -5361,3 +5361,8 @@ Stacktrace:
 		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 		at java.base/java.lang.Thread.run(Thread.java:829)
+08-May-2025 22:10:42.851 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+08-May-2025 22:10:42.851 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+08-May-2025 22:10:42.854 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5825932c')
+08-May-2025 22:10:44.342 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+08-May-2025 22:10:44.343 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

@@ -58,24 +58,26 @@
                 out.println("<script>window.location.href='signup.jsp';</script>");
                 return;
             }
-            // 회원가입 INSERT
-            String insertQuery = "INSERT INTO users (username, password, email) VALUES ('" + username + "', '" + password + "', '" + email + "')";
-            int result = stmt.executeUpdate(insertQuery);
+            else{
+                // 회원가입 INSERT
+                String insertQuery = "INSERT INTO users (username, password, email) VALUES ('" + username + "', '" + password + "', '" + email + "')";
+                int result = stmt.executeUpdate(insertQuery);
 
-            if (result > 0) {
-                out.println("회원가입 성공");
-                //alert 창 띄우기
-                out.println("<script>alert('회원가입 성공');</script>");
-                // 로그인 페이지로 리다이렉트
-                out.println("<script>window.location.href='/login/login.jsp';</script>");
+                if (result > 0) {
+                    out.println("회원가입 성공");
+                    //alert 창 띄우기
+                    out.println("<script>alert('회원가입 성공');</script>");
+                    // 로그인 페이지로 리다이렉트
+                    out.println("<script>window.location.href='/login/login.jsp';</script>");
 
-            } else {
-                out.println("회원가입 실패");
-                //alert 창 띄우기
-                out.println("<script>alert('회원가입 실패');</script>");
-                // 회원가입 페이지로 리다이렉트
-                out.println("<script>window.location.href='signup.jsp';</script>");
+                } else {
+                    out.println("회원가입 실패");
+                    //alert 창 띄우기
+                    out.println("<script>alert('회원가입 실패');</script>");
+                    // 회원가입 페이지로 리다이렉트
+                    out.println("<script>window.location.href='signup.jsp';</script>");
 
+                }
             }
         }
 
