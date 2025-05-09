@@ -51,18 +51,26 @@
 
     <!-- 상단 네비게이션 -->
     <div class="navbar">
-        <div class="logo">TEST<span class="white-text">GAMES</span></div>
+        <a href="/index.jsp" class="logo">
+            TEST<span class="white-text">GAMES</span>
+        </a>
         <div class="navbar-right">
             <a href="/board/board.jsp">BLOG</a>
             <a href="#">STORE</a>
+            
             <% if (isLoggedIn) { %>
                 <a href="/login/logout.jsp">LOGOUT</a>
             <% } else { %>
                 <a href="/login/login.jsp">LOGIN</a>
                 <a href="/signup/signup.jsp">SIGNUP</a>
             <% } %>
+
+            <% if ("admin".equals(username)) { %>
+                <a href="/admin/admin.jsp">ADMIN</a>
+            <% } %>
         </div>
     </div>
+
 
     <!-- 히어로 배너 영역 -->
     <div class="hero">

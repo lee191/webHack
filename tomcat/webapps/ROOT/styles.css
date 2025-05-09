@@ -20,6 +20,7 @@ body {
     font-size: 1.8em;
     font-weight: bold;
     color: #e53935;
+    text-decoration: none; /* 링크 밑줄 제거 */
 }
 
 .white-text {

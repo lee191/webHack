@@ -39,7 +39,7 @@
         return;
     }
 
-    String dbURL = "jdbc:mysql://localhost:3306/my_database";
+    String dbURL = "jdbc:mysql://172.17.0.1:3306/my_database";
     String dbUser = "test";
     String dbPass = "test";
 

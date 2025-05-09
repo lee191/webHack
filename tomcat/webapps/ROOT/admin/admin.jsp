@@ -52,6 +52,16 @@
     <link rel="stylesheet" href="admin_styles.css"> <!-- 아래 CSS 연결 -->
 </head>
 <body>
+    <!-- 상단 네비게이션 -->
+    <div class="navbar">
+        <a href="/index.jsp" class="logo">
+            TEST<span class="white-text">GAMES</span>
+        </a>
+        <div class="navbar-right">
+            <a href="/index.jsp">MAIN</a>
+            <a href="/board/board.jsp">BLOG</a>
+        </div>
+    </div>
     <div class="container">
         <h1>관리자 전용 페이지</h1>
         <p><strong><%= username %></strong> 님, 관리자 권한으로 접속하셨습니다.</p>
