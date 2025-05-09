@@ -1,0 +1,239 @@
+/* 전체 배경 및 글꼴 */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 네비게이션 바 */
+.navbar {
+    width: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e53935;
+    text-decoration: none; /* 링크 밑줄 제거 */
+
+}
+
+.white-text {
+    color: white;
+}
+
+.navbar-right a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar-right a:hover {
+    color: #e53935;
+}
+
+/* 메인 제목 */
+h1 {
+    margin-top: 40px;
+    font-size: 2.8em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.no-link-style {
+    color: inherit;
+    text-decoration: none;
+}
+
+.no-link-style:hover {
+    text-decoration: underline;
+    color: #e53935; /* 마우스 오버 시 강조색 */
+}
+
+/* 환영 메시지 */
+.welcome-message {
+    text-align: center;
+    margin: 2px 0 2px 0;
+    line-height: 1.8em;
+}
+
+.welcome-message h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* 검색창 */
+.search-container {
+    margin-bottom: 30px;
+}
+
+.search-container form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 240px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+.search-container input::placeholder {
+    color: #bbb;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #b71c1c;
+}
+
+.welcome-message p {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+
+/* 테이블 위 정렬 바 (검색 + 글쓰기) */
+.top-bar {
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* 기존 검색창 스타일 유지 */
+.search-container form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 240px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 글쓰기 버튼 조정 */
+.write-button-container form button {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.write-button-container form button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.03);
+}
+.write-button-container form button {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.8em;
+}
+
+.write-button-container form button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.03);
+}
+
+/* 게시판 테이블 */
+.post-table {
+    width: 90%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.post-table th,
+.post-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ddd;
+}
+
+.post-table th {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 1.1em;
+}
+
+.post-table td a {
+    color: #f8d64e;
+    text-decoration: none;
+}
+
+.post-table td a:hover {
+    text-decoration: underline;
+    color: #ffb300;
+}
+
+.footer {
+    background-color: #1c1c1c;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+
