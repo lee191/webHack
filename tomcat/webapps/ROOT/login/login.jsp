@@ -11,7 +11,7 @@
 
     <!-- 상단 네비게이션 -->
     <div class="navbar">
-        <div class="logo">TEST<span class="white-text">GAMES</span></div>
+        <a href="/index.jsp" class="logo">TEST<span class="white-text">GAMES</span></a>
         <div class="navbar-right">
                 <a href="/signup/signup.jsp">SIGNUP</a>
         </div>

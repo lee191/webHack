@@ -1,6 +1,6 @@
 <%@ page import="java.sql.*" %>
 <%
-    String jdbcUrl = "jdbc:mysql://172.17.0.1:3306/my_database";
+    String jdbcUrl = "jdbc:mysql://localhost:3306/my_database";
     String dbUser = "test";
     String dbPass = "test";
 

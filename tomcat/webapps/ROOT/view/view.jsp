@@ -4,7 +4,7 @@
 <%
     request.setCharacterEncoding("UTF-8");
 
-    String dbURL = "jdbc:mysql://172.17.0.1:3306/my_database?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
+    String dbURL = "jdbc:mysql://localhost:3306/my_database?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
     String dbUser = "test";
     String dbPass = "test";
 

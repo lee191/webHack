@@ -26,7 +26,8 @@ body {
     font-size: 1.8em;
     font-weight: bold;
     color: #e53935;
-    margin-left: 20px;
+    text-decoration: none;
+
 }
 
 .white-text {

@@ -18,7 +18,7 @@
         </tr>
         <%
             // Database connection parameters
-            String url = "jdbc:mysql://172.17.0.1:3306/my_database?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
+            String url = "jdbc:mysql://localhost:3306/my_database?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
             String username = "test";
             String db_password = "test";
 
