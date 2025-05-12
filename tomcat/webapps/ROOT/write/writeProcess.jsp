@@ -1,92 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*, java.io.*, java.util.*, io.jsonwebtoken.*, javax.crypto.spec.SecretKeySpec, java.security.Key" %>
-<%@ page import="javax.servlet.http.Part" %>
+<%@ page import="java.io.*, java.sql.*, javax.servlet.http.Part" %>
+<%@ page import="javax.xml.parsers.*, org.w3c.dom.*" %>
 
 <%
     request.setCharacterEncoding("UTF-8");
 
-    // JWT에서 사용자 정보 추출
-    String token = null;
-    String username = null;
-    boolean isAuthenticated = false;
-
-    Cookie[] cookies = request.getCookies();
-    if (cookies != null) {
-        for (Cookie cookie : cookies) {
-            if ("authToken".equals(cookie.getName())) {
-                token = cookie.getValue();
-                break;
-            }
-        }
-    }
-
-    if (token != null) {
-        try {
-            byte[] keyBytes = "thisIsASecretKeyThatIsAtLeast32Bytes!".getBytes("UTF-8");
-            Key signingKey = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
-
-            Claims claims = Jwts.parserBuilder()
-                .setSigningKey(signingKey)
-                .build()
-                .parseClaimsJws(token)
-                .getBody();
-
-            username = claims.getSubject();
-            isAuthenticated = true;
-        } catch (Exception e) {
-            out.println("<script>alert('인증 실패: " + e.getMessage() + "'); location.href='index.jsp';</script>");
-        }
-    }
-
-    if (!isAuthenticated) {
-        out.println("<script>alert('로그인이 필요합니다.'); location.href='index.jsp';</script>");
-        return;
-    }
-
-    // 입력값
     String title = request.getParameter("title");
     String content = request.getParameter("content");
     String filename = null;
+    String parsedXml = "";
 
-    // 파일 업로드 처리
+    // 1. 파일 업로드 처리 (확장자 필터링 없음)
     String uploadPath = application.getRealPath("/uploads");
-    // 업로드 경로 확인
-    if (uploadPath == null) {
-        out.println("<script>alert('업로드 경로를 찾을 수 없습니다.'); history.back();</script>");
-        return;
-    }
     File uploadDir = new File(uploadPath);
     if (!uploadDir.exists()) uploadDir.mkdir();
 
     Part filePart = request.getPart("file");
     if (filePart != null && filePart.getSize() > 0) {
-        filename = filePart.getSubmittedFileName();
+        filename = filePart.getSubmittedFileName(); // 🔥 확장자 필터링 없음
         filePart.write(uploadPath + File.separator + filename);
     }
 
-    // DB 저장
-    Connection conn = null;
-    PreparedStatement pstmt = null;
+    // 2. XML 파싱 (XXE 허용된 상태)
+    String xmlInput = request.getParameter("xml");
+    if (xmlInput != null && !xmlInput.trim().isEmpty()) {
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false); // ❗️ XXE 가능
+            dbf.setFeature("http://xml.org/sax/features/external-general-entities", true);
+            dbf.setFeature("http://xml.org/sax/features/external-parameter-entities", true);
+            dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", true);
+            dbf.setExpandEntityReferences(true);
 
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            InputStream is = new ByteArrayInputStream(xmlInput.getBytes("UTF-8"));
+            Document doc = db.parse(is);
+
+            parsedXml = doc.getDocumentElement().getTextContent();
+        } catch (Exception e) {
+            parsedXml = "XML 파싱 오류: " + e.getMessage();
+        }
+    }
+
+    // 3. DB 저장 (옵션, 없으면 생략 가능)
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection(
+        Connection conn = DriverManager.getConnection(
             "jdbc:mysql://localhost:3306/my_database?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC",
             "test", "test"
         );
         String sql = "INSERT INTO posts (username, title, content, filename) VALUES (?, ?, ?, ?)";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, username);
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, "anonymous"); // JWT 없이 고정 유저 처리
         pstmt.setString(2, title);
         pstmt.setString(3, content);
-        pstmt.setString(4, filename);
-
+        pstmt.setString(4, filename != null ? filename : ""); 
         pstmt.executeUpdate();
-        out.println("<script>alert('게시글이 등록되었습니다.'); location.href='/board/board.jsp';</script>");
+        pstmt.close();
+        conn.close();
     } catch (Exception e) {
-        out.println("<script>alert('DB 오류: " + e.getMessage() + "'); history.back();</script>");
-    } finally {
-        try { if (pstmt != null) pstmt.close(); } catch (Exception e) {}
-        try { if (conn != null) conn.close(); } catch (Exception e) {}
+        out.println("<p style='color:red;'>DB 오류: " + e.getMessage() + "</p>");
     }
+
 %>
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>처리 결과</title></head>
+<body>
+    <h2>✅ 업로드 완료</h2>
+    <p>제목: <%= title %></p>
+    <p>내용: <%= content %></p>
+    <% if (filename != null) { %>
+        <p>파일 저장: <strong>/uploads/<%= filename %></strong></p>
+    <% } %>
+
+    <% if (parsedXml != null && !parsedXml.trim().isEmpty()) { %>
+        <h3>📦 XML 파싱 결과:</h3>
+        <pre><%= parsedXml %></pre>
+    <% } %>
+</body>
+</html>
