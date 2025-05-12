@@ -1,27 +1,65 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.*, java.sql.*, javax.servlet.http.Part" %>
 <%@ page import="javax.xml.parsers.*, org.w3c.dom.*" %>
+<%@ page import="io.jsonwebtoken.*, javax.crypto.spec.SecretKeySpec, java.security.Key" %>
 
 <%
     request.setCharacterEncoding("UTF-8");
 
+    // 1. 로그인 여부 확인 (JWT from cookie)
+    String username = null;
+    String token = null;
+
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+        for (Cookie cookie : cookies) {
+            if ("authToken".equals(cookie.getName())) {
+                token = cookie.getValue();
+                break;
+            }
+        }
+    }
+
+    if (token != null) {
+        try {
+            byte[] keyBytes = "thisIsASecretKeyThatIsAtLeast32Bytes!".getBytes("UTF-8");
+            Key key = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
+            Claims claims = Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+            username = claims.getSubject();
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("/login/login.jsp");
+            return;
+        }
+    }
+
+    if (username == null) {
+        response.sendRedirect("/login/login.jsp");
+        return;
+    }
+
+    // 2. 사용자 입력 수신
     String title = request.getParameter("title");
     String content = request.getParameter("content");
     String filename = null;
     String parsedXml = "";
 
-    // 1. 파일 업로드 처리 (확장자 필터링 없음)
+    // 3. 파일 업로드 처리
     String uploadPath = application.getRealPath("/uploads");
     File uploadDir = new File(uploadPath);
     if (!uploadDir.exists()) uploadDir.mkdir();
 
     Part filePart = request.getPart("file");
     if (filePart != null && filePart.getSize() > 0) {
-        filename = filePart.getSubmittedFileName(); // 🔥 확장자 필터링 없음
+        filename = filePart.getSubmittedFileName();
         filePart.write(uploadPath + File.separator + filename);
     }
 
-    // 2. XML 파싱 (XXE 허용된 상태)
+    // 4. XML 파싱 (XXE 허용 상태)
     String xmlInput = request.getParameter("xml");
     if (xmlInput != null && !xmlInput.trim().isEmpty()) {
         try {
@@ -42,7 +80,7 @@
         }
     }
 
-    // 3. DB 저장 (옵션, 없으면 생략 가능)
+    // 5. DB 저장
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(
@@ -51,7 +89,7 @@
         );
         String sql = "INSERT INTO posts (username, title, content, filename) VALUES (?, ?, ?, ?)";
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, "anonymous"); // JWT 없이 고정 유저 처리
+        pstmt.setString(1, username); // 로그인된 사용자
         pstmt.setString(2, title);
         pstmt.setString(3, content);
         pstmt.setString(4, filename != null ? filename : ""); 
@@ -62,22 +100,7 @@
         out.println("<p style='color:red;'>DB 오류: " + e.getMessage() + "</p>");
     }
 
+    // 성공 메시지 alert
+    out.println("<script>alert('업로드 완료!');</script>");
+    out.println("<script>location.href='/board/board.jsp';</script>");
 %>
-
-<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>처리 결과</title></head>
-<body>
-    <h2>✅ 업로드 완료</h2>
-    <p>제목: <%= title %></p>
-    <p>내용: <%= content %></p>
-    <% if (filename != null) { %>
-        <p>파일 저장: <strong>/uploads/<%= filename %></strong></p>
-    <% } %>
-
-    <% if (parsedXml != null && !parsedXml.trim().isEmpty()) { %>
-        <h3>📦 XML 파싱 결과:</h3>
-        <pre><%= parsedXml %></pre>
-    <% } %>
-</body>
-</html>
