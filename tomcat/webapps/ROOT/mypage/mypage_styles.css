@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2b2929;
+}
+
+
+/* 상단 배경 */
+.profile-header {
+    background-image: url('/image/bg.jpg');
+    background-size: cover;
+    height: 200px;
+    position: relative;
+}
+
+/* 프로필 원형 이미지 */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('/image/profile.png');
+    background-size: cover;
+}
+
+/* 중앙 정보 영역 */
+.profile-content {
+    text-align: center;
+    margin-top: 80px;
+    color: white;
+}
+
+.profile-content h2 {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.profile-content p {
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* 버튼 영역 */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button-group a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #7e57c2;
+}
+
+.edit-btn:hover {
+    background-color: #5e35b1;
+}
+
+.logout-btn {
+    background-color: #e53935;
+}
+
+.logout-btn:hover {
+    background-color: #c62828;
+}
+
+.intro-box {
+    margin: 20px auto 30px;
+    max-width: 400px;
+    background-color: rgba(0,0,0,0.05);
+    padding: 16px;
+    border-radius: 10px;
+    color: #000000;
+    font-size: 1em;
+}

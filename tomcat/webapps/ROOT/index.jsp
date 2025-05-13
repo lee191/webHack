@@ -68,6 +68,8 @@
             <% if ("admin".equals(username)) { %>
                 <a href="/admin/admin.jsp">ADMIN</a>
             <% } %>
+
+            <a href="/mypage/mypage.jsp">MY PAGE</a>
         </div>
     </div>
 

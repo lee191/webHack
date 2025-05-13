@@ -77,5 +77,4 @@
     <servlet-name>ssi</servlet-name>
     <url-pattern>*.shtml</url-pattern>
   </servlet-mapping>
-
 </web-app>

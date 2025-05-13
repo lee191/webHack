@@ -1,1 +1,0 @@
-<% out.println("현재 시간: " + new java.util.Date()); %>
