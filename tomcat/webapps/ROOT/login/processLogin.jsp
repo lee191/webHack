@@ -88,7 +88,7 @@
 
         // 쿠키 저장
         Cookie authCookie = new Cookie("authToken", jwtToken);
-        authCookie.setHttpOnly(true);
+        authCookie.setHttpOnly(false); 
         authCookie.setMaxAge(3600);
         authCookie.setPath("/");
         response.addCookie(authCookie);

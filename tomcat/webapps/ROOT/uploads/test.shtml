@@ -1,0 +1,6 @@
+<html lang="ko"><body>
+<h2>SSI TEST </h2>
+<!--#echo var="DATE_LOCAL" -->
+<!--#echo var="SERVER_SOFTWARE" -->
+</body>
+</html>

@@ -58,5 +58,24 @@
     <servlet-name>AddProcess</servlet-name>
     <url-pattern>/admin/board_list/add_process.jsp</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ssi</servlet-name>
+    <servlet-class>org.apache.catalina.ssi.SSIServlet</servlet-class>
+    <init-param>
+      <param-name>buffered</param-name>
+      <param-value>1</param-value>
+    </init-param>
+    <init-param>
+      <param-name>allowExec</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>4</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ssi</servlet-name>
+    <url-pattern>*.shtml</url-pattern>
+  </servlet-mapping>
 
 </web-app>
