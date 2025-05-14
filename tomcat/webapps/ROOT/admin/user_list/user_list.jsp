@@ -2,6 +2,30 @@
 
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
+
+<%
+    request.setCharacterEncoding("UTF-8");
+
+    // 사용자 쿠키에서 username만 추출
+    String username = null;
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+        for (Cookie cookie : cookies) {
+            if ("username".equals(cookie.getName())) {
+                username = cookie.getValue();
+                break;
+            }
+        }
+    }
+
+    // **취약한 인증 로직**
+    // username이 "admin"인 경우만 접근 허용
+    if (username == null || !username.equals("admin")) {
+        response.sendRedirect("/login/login.jsp");
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +43,7 @@
         <%
             // Database connection parameters
             String url = "jdbc:mysql://localhost:3306/my_database?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
-            String username = "test";
+            String db_username = "test";
             String db_password = "test";
 
             Connection conn = null;
@@ -31,7 +55,7 @@
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
                 // Establish the connection
-                conn = DriverManager.getConnection(url, username, db_password);
+                conn = DriverManager.getConnection(url, db_username, db_password);
 
                 // Create a statement
                 stmt = conn.createStatement();

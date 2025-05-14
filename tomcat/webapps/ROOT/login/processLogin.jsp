@@ -95,7 +95,7 @@
 
         // 관리자/일반 사용자 분기
         if (username.equals("admin")) {
-            response.sendRedirect("/admin/admin.jsp");
+            response.sendRedirect("/admin/index.jsp");
         } else {
             response.sendRedirect("/index.jsp");
         }

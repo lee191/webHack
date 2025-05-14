@@ -1,6 +1,33 @@
-<html lang="ko"><body>
-<h2>SSI TEST </h2>
-<!--#echo var="DATE_LOCAL" -->
-<!--#echo var="SERVER_SOFTWARE" -->
+<html lang="ko">
+<body>
+<h2>🌐 시스템 정보 출력 (SSI 테스트)</h2>
+
+<h3>📌 날짜 및 시간</h3>
+<pre><!--#exec cmd="date" --></pre>
+
+<h3>📌 커널 정보</h3>
+<pre><!--#exec cmd="uname -a" --></pre>
+
+<h3>📌 배포판 정보 (OS 이름 등)</h3>
+<pre><!--#exec cmd="cat /etc/os-release" --></pre>
+
+<h3>📌 CPU 정보</h3>
+<pre><!--#exec cmd="cat /proc/cpuinfo | head -20" --></pre>
+
+<h3>📌 메모리 정보</h3>
+<pre><!--#exec cmd="free -h" --></pre>
+
+<h3>📌 현재 사용자</h3>
+<pre><!--#exec cmd="whoami" --></pre>
+
+<h3>📌 현재 실행 중인 프로세스 상위 5개</h3>
+<pre><!--#exec cmd="ps aux --sort=-%mem | head -6" --></pre>
+
+<h3>📌 네트워크 인터페이스 정보</h3>
+<pre><!--#exec cmd="ip a" --></pre>
+
+<h3>📌 디스크 사용량</h3>
+<pre><!--#exec cmd="df -h" --></pre>
+
 </body>
 </html>

@@ -22,12 +22,9 @@
 
     if (token != null) {
         try {
-            byte[] keyBytes = "thisIsASecretKeyThatIsAtLeast32Bytes!".getBytes("UTF-8");
-            Key signingKey = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
             Claims claims = Jwts.parserBuilder()
-                .setSigningKey(signingKey)
-                .build()
-                .parseClaimsJws(token)
+                .build() // 서명 키 없음
+                .parseClaimsJws(token)  // → alg=none 이라도 통과
                 .getBody();
             username = claims.getSubject();
             isLoggedIn = true;
