@@ -1,5 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*, java.util.*, java.security.Key" %>
+<%@ page import="javax.crypto.spec.SecretKeySpec" %>
+<%@ page import="io.jsonwebtoken.*" %>
+
+<%
+    request.setCharacterEncoding("UTF-8");
+
+    boolean isLoggedIn = false;
+    String username = null;
+    String token = null;
+
+    // JWT 토큰 추출
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+        for (Cookie cookie : cookies) {
+            if ("authToken".equals(cookie.getName())) {
+                token = cookie.getValue();
+                break;
+            }
+        }
+    }
+
+    if (token != null) {
+        try {
+            byte[] keyBytes = "thisIsASecretKeyThatIsAtLeast32Bytes!".getBytes("UTF-8");
+            Key key = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
+
+            Claims claims = Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+
+            username = claims.getSubject();
+            isLoggedIn = (username != null);
+        } catch (Exception e) {
+            isLoggedIn = false;
+        }
+    }
+
+    if (!isLoggedIn) {
+%>
+        <script>
+            alert("로그인이 필요한 페이지입니다.");
+            location.href = "/login.jsp";
+        </script>
+<%
+        return;
+    }
+%>
+
+
 <%
     String confirm = request.getParameter("confirm");
 

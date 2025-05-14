@@ -5205,3 +5205,589 @@ Stacktrace:
 		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 		at java.base/java.lang.Thread.run(Thread.java:829)
+14-May-2025 20:12:51.288 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+14-May-2025 20:12:51.288 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+14-May-2025 20:12:51.292 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@17ed6578')
+14-May-2025 20:29:48.290 심각 [http-nio-8080-exec-13] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Claims cannot be resolved to a type
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Jwts cannot be resolved
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Claims cannot be resolved to a type
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Jwts cannot be resolved
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-May-2025 20:30:03.808 심각 [http-nio-8080-exec-12] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Claims cannot be resolved to a type
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Jwts cannot be resolved
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Claims cannot be resolved to a type
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Jwts cannot be resolved
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-May-2025 20:30:08.235 심각 [http-nio-8080-exec-19] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Claims cannot be resolved to a type
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Jwts cannot be resolved
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Claims cannot be resolved to a type
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [22] 행에서 오류가 발생했습니다.
+Jwts cannot be resolved
+19: 
+20:     if (token != null) {
+21:         try {
+22:             Claims claims = Jwts.parserBuilder()
+23:                 .build() // 취약한 검증: 서명 없음
+24:                 .parseClaimsJws(token)
+25:                 .getBody();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-May-2025 20:38:32.644 심각 [http-nio-8080-exec-13] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [26] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+23:             String[] parts = token.split("\\.");
+24:             if (parts.length >= 2) {
+25:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+26:                 JSONObject payload = new JSONObject(payloadJson);
+27:                 username = payload.optString("sub");
+28:             }
+29:         } catch (Exception e) {
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [26] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+23:             String[] parts = token.split("\\.");
+24:             if (parts.length >= 2) {
+25:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+26:                 JSONObject payload = new JSONObject(payloadJson);
+27:                 username = payload.optString("sub");
+28:             }
+29:         } catch (Exception e) {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [26] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+23:             String[] parts = token.split("\\.");
+24:             if (parts.length >= 2) {
+25:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+26:                 JSONObject payload = new JSONObject(payloadJson);
+27:                 username = payload.optString("sub");
+28:             }
+29:         } catch (Exception e) {
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [26] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+23:             String[] parts = token.split("\\.");
+24:             if (parts.length >= 2) {
+25:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+26:                 JSONObject payload = new JSONObject(payloadJson);
+27:                 username = payload.optString("sub");
+28:             }
+29:         } catch (Exception e) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-May-2025 20:38:36.914 심각 [http-nio-8080-exec-12] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [26] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+23:             String[] parts = token.split("\\.");
+24:             if (parts.length >= 2) {
+25:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+26:                 JSONObject payload = new JSONObject(payloadJson);
+27:                 username = payload.optString("sub");
+28:             }
+29:         } catch (Exception e) {
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [26] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+23:             String[] parts = token.split("\\.");
+24:             if (parts.length >= 2) {
+25:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+26:                 JSONObject payload = new JSONObject(payloadJson);
+27:                 username = payload.optString("sub");
+28:             }
+29:         } catch (Exception e) {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [26] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+23:             String[] parts = token.split("\\.");
+24:             if (parts.length >= 2) {
+25:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+26:                 JSONObject payload = new JSONObject(payloadJson);
+27:                 username = payload.optString("sub");
+28:             }
+29:         } catch (Exception e) {
+
+
+JSP 파일 [/admin/user_list/user_list.jsp]의 [26] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+23:             String[] parts = token.split("\\.");
+24:             if (parts.length >= 2) {
+25:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+26:                 JSONObject payload = new JSONObject(payloadJson);
+27:                 username = payload.optString("sub");
+28:             }
+29:         } catch (Exception e) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-May-2025 22:11:27.032 심각 [http-nio-8080-exec-19] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/edit_pass.jsp]의 [8] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved to a type
+5:     // 문자열을 MD5 해시로 변환하는 함수
+6:     String md5(String input) {
+7:         try {
+8:             MessageDigest md = MessageDigest.getInstance("MD5");
+9:             byte[] messageDigest = md.digest(input.getBytes("UTF-8"));
+10:             StringBuilder sb = new StringBuilder();
+11:             for (byte b : messageDigest) {
+
+
+JSP 파일 [/login/edit_pass.jsp]의 [8] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved
+5:     // 문자열을 MD5 해시로 변환하는 함수
+6:     String md5(String input) {
+7:         try {
+8:             MessageDigest md = MessageDigest.getInstance("MD5");
+9:             byte[] messageDigest = md.digest(input.getBytes("UTF-8"));
+10:             StringBuilder sb = new StringBuilder();
+11:             for (byte b : messageDigest) {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/edit_pass.jsp]의 [8] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved to a type
+5:     // 문자열을 MD5 해시로 변환하는 함수
+6:     String md5(String input) {
+7:         try {
+8:             MessageDigest md = MessageDigest.getInstance("MD5");
+9:             byte[] messageDigest = md.digest(input.getBytes("UTF-8"));
+10:             StringBuilder sb = new StringBuilder();
+11:             for (byte b : messageDigest) {
+
+
+JSP 파일 [/login/edit_pass.jsp]의 [8] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved
+5:     // 문자열을 MD5 해시로 변환하는 함수
+6:     String md5(String input) {
+7:         try {
+8:             MessageDigest md = MessageDigest.getInstance("MD5");
+9:             byte[] messageDigest = md.digest(input.getBytes("UTF-8"));
+10:             StringBuilder sb = new StringBuilder();
+11:             for (byte b : messageDigest) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-May-2025 22:11:35.814 심각 [http-nio-8080-exec-15] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/edit_pass.jsp]의 [8] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved to a type
+5:     // 문자열을 MD5 해시로 변환하는 함수
+6:     String md5(String input) {
+7:         try {
+8:             MessageDigest md = MessageDigest.getInstance("MD5");
+9:             byte[] messageDigest = md.digest(input.getBytes("UTF-8"));
+10:             StringBuilder sb = new StringBuilder();
+11:             for (byte b : messageDigest) {
+
+
+JSP 파일 [/login/edit_pass.jsp]의 [8] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved
+5:     // 문자열을 MD5 해시로 변환하는 함수
+6:     String md5(String input) {
+7:         try {
+8:             MessageDigest md = MessageDigest.getInstance("MD5");
+9:             byte[] messageDigest = md.digest(input.getBytes("UTF-8"));
+10:             StringBuilder sb = new StringBuilder();
+11:             for (byte b : messageDigest) {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/edit_pass.jsp]의 [8] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved to a type
+5:     // 문자열을 MD5 해시로 변환하는 함수
+6:     String md5(String input) {
+7:         try {
+8:             MessageDigest md = MessageDigest.getInstance("MD5");
+9:             byte[] messageDigest = md.digest(input.getBytes("UTF-8"));
+10:             StringBuilder sb = new StringBuilder();
+11:             for (byte b : messageDigest) {
+
+
+JSP 파일 [/login/edit_pass.jsp]의 [8] 행에서 오류가 발생했습니다.
+MessageDigest cannot be resolved
+5:     // 문자열을 MD5 해시로 변환하는 함수
+6:     String md5(String input) {
+7:         try {
+8:             MessageDigest md = MessageDigest.getInstance("MD5");
+9:             byte[] messageDigest = md.digest(input.getBytes("UTF-8"));
+10:             StringBuilder sb = new StringBuilder();
+11:             for (byte b : messageDigest) {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+14-May-2025 22:30:10.061 정보 [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+14-May-2025 22:30:10.062 정보 [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

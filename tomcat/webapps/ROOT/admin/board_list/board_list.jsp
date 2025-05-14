@@ -2,28 +2,6 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
 
-<%
-    request.setCharacterEncoding("UTF-8");
-
-    // 사용자 쿠키에서 username만 추출
-    String username = null;
-    Cookie[] cookies = request.getCookies();
-    if (cookies != null) {
-        for (Cookie cookie : cookies) {
-            if ("username".equals(cookie.getName())) {
-                username = cookie.getValue();
-                break;
-            }
-        }
-    }
-
-    // **취약한 인증 로직**
-    // username이 "admin"인 경우만 접근 허용
-    if (username == null || !username.equals("admin")) {
-        response.sendRedirect("/login/login.jsp");
-        return;
-    }
-%>
 
 <!DOCTYPE html>
 <html>
@@ -105,7 +83,7 @@
     </table>
 
     <!-- 버튼 영역 -->
-    <form action="/admin/admin.jsp" method="post" style="display:inline;">
+    <form action="/admin/index.jsp" method="post" style="display:inline;">
         <button type="submit">관리자 페이지</button>
     </form>
     <form action="/admin/board_list/add.jsp" method="post" style="display:inline;">

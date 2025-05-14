@@ -1,30 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page import="io.jsonwebtoken.*" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
 
-<%
-    request.setCharacterEncoding("UTF-8");
 
-    // 사용자 쿠키에서 username만 추출
-    String username = null;
-    Cookie[] cookies = request.getCookies();
-    if (cookies != null) {
-        for (Cookie cookie : cookies) {
-            if ("username".equals(cookie.getName())) {
-                username = cookie.getValue();
-                break;
-            }
-        }
-    }
-
-    // **취약한 인증 로직**
-    // username이 "admin"인 경우만 접근 허용
-    if (username == null || !username.equals("admin")) {
-        response.sendRedirect("/login/login.jsp");
-        return;
-    }
-%>
 
 <!DOCTYPE html>
 <html>
@@ -38,7 +17,6 @@
         <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Password</th>
         </tr>
         <%
             // Database connection parameters
@@ -61,7 +39,7 @@
                 stmt = conn.createStatement();
 
                 // Execute the query
-                String query = "SELECT id, username, email, password FROM users";
+                String query = "SELECT id, username, email FROM users";
                 rs = stmt.executeQuery(query);
 
                 // Iterate through the result set and display the data
@@ -69,12 +47,10 @@
                     int id = rs.getInt("id");
                     String name = rs.getString("username");
                     String email = rs.getString("email");
-                    String password = rs.getString("password"); // MD5 해시된 비밀번호
         %>
         <tr>
             <td><%= name %></td>
             <td><%= email %></td>
-            <td><%= password %></td>
         </tr>
         <%
                 }
@@ -88,7 +64,7 @@
             }
         %>
     </table>
-    <form action="/admin/admin.jsp" method="post" style="display:inline;">
+    <form action="/admin/index.jsp" method="post" style="display:inline;">
         <button type="submit">관리자 페이지</button>
     </form>
     <form action="/admin/add_user/add_user.jsp" method="post" style="display:inline;">

@@ -18,7 +18,7 @@
 
         <button type="submit">Delete User</button>
     </form>
-    <a href="/admin/admin.jsp">관리자 페이지로 돌아가기</a>
+    <a href="/admin/index.jsp">관리자 페이지로 돌아가기</a>
 
 </body>
 </html>

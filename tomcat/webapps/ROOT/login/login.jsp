@@ -31,7 +31,7 @@
             <button type="submit">Login</button>
         </form>
 
-        <a href="/login/search.jsp">← 비밀번호 찾기</a>
+        <a href="/login/edit_pass.jsp">← 비밀번호 변경</a>
         <a href="/index.jsp">← 메인 페이지로 돌아가기</a>
     </div>
 
