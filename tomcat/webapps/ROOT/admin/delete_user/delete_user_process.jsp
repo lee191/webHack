@@ -9,9 +9,9 @@
     String username = request.getParameter("username");
     String password = request.getParameter("password");
 
-    String dbURL = "jdbc:mysql://localhost:3306/my_database";
-    String dbUser = "test";
-    String dbPassword = "test";
+    String dbURL = System.getenv("DB_URL");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
 
     boolean isValidUser = false;
 

@@ -20,10 +20,9 @@
         </tr>
         <%
             // Database connection parameters
-            String url = "jdbc:mysql://localhost:3306/my_database?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
-            String db_username = "test";
-            String db_password = "test";
-
+            String dbURL = System.getenv("DB_URL");
+            String dbUser = System.getenv("DB_USER");
+            String dbPassword = System.getenv("DB_PASSWORD");
             Connection conn = null;
             Statement stmt = null;
             ResultSet rs = null;
@@ -33,7 +32,7 @@
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
                 // Establish the connection
-                conn = DriverManager.getConnection(url, db_username, db_password);
+                conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
 
                 // Create a statement
                 stmt = conn.createStatement();

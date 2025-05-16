@@ -72,9 +72,9 @@
 
 <%-- 삭제 처리 로직 시작 --%>
 <%
-    String dbURL = "jdbc:mysql://localhost:3306/my_database";
-    String dbUser = "test";
-    String dbPassword = "test";
+    String dbURL = System.getenv("DB_URL");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
 
     Connection conn = null;
     Statement stmt = null;

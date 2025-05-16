@@ -22,14 +22,18 @@
 
     if (token != null) {
         try {
+            byte[] keyBytes = "thisIsASecretKeyThatIsAtLeast32Bytes!".getBytes("UTF-8");
+            Key signingKey = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
             Claims claims = Jwts.parserBuilder()
-                .build() // 서명 키 없음
-                .parseClaimsJws(token)  // → alg=none 이라도 통과
+                .setSigningKey(signingKey)
+                .build()
+                .parseClaimsJws(token)
                 .getBody();
             username = claims.getSubject();
             isLoggedIn = true;
         } catch (Exception e) {
             isLoggedIn = false;
+            e.printStackTrace(); // 디버깅: JWT 파싱 예외 확인
         }
     }
 
@@ -39,12 +43,14 @@
     }
 
     String intro = request.getParameter("intro");
-
+    String dbURL = System.getenv("DB_URL");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
     if (intro != null) {
         // 1. DB에 저장
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_database", "test", "test");
+            Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
             String sql = "UPDATE users SET introduction = ? WHERE username = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, intro);
@@ -57,12 +63,18 @@
 
         // 2. 템플릿 파일로 저장 (RCE 실험 가능)
         try {
-            File file = new File(application.getRealPath("/templates/user_" + username + ".jsp"));
+            String templatesPath = application.getRealPath("/templates/");
+            File dir = new File(templatesPath);
+            if (!dir.exists()) {
+                dir.mkdirs(); // 디렉터리 없으면 생성
+            }
+            File file = new File(templatesPath, "user_" + username + ".jsp");
             try (PrintWriter writer = new PrintWriter(new FileWriter(file))) {
                 writer.println(intro); // 사용자 입력 그대로 저장
             }
         } catch (Exception e) {
             e.printStackTrace();
+            out.println("<script>alert('템플릿 저장 오류: " + e.getMessage() + "');</script>");
         }
 
         // 3. 리디렉션

@@ -39,9 +39,9 @@
         return;
     }
 
-    String dbURL = "jdbc:mysql://localhost:3306/my_database";
-    String dbUser = "test";
-    String dbPass = "test";
+    String dbURL = System.getenv("DB_URL");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -113,7 +113,7 @@
         <%
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+                conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
 
                 String sql = isSearch
                     ? "SELECT id, username, title, created_at FROM posts WHERE title LIKE ? OR content LIKE ? ORDER BY created_at DESC LIMIT 10"

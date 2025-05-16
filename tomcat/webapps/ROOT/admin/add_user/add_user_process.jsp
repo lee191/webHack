@@ -32,12 +32,13 @@
     Statement stmt = null;
     ResultSet rs = null;
 
+    String dbURL = System.getenv("DB_URL");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
+
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/my_database", 
-            "test", "test"
-        );
+        conn = DriverManager.getConnection(dbcUrl, dbUser, dbPass);
 
         stmt = conn.createStatement();
 

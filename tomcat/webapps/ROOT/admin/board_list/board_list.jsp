@@ -22,9 +22,9 @@
         </tr>
         <%
             // DB 연결 정보
-            String url = "jdbc:mysql://localhost:3306/my_database?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
-            String dbUser = "test";
-            String dbPass = "test";
+            String dbURL = System.getenv("DB_URL");
+            String dbUser = System.getenv("DB_USER");
+            String dbPassword = System.getenv("DB_PASSWORD");
 
             Connection conn = null;
             Statement stmt = null;
@@ -32,7 +32,7 @@
 
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection(url, dbUser, dbPass);
+                conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
                 stmt = conn.createStatement();
                 String query = "SELECT * FROM posts";
                 rs = stmt.executeQuery(query);

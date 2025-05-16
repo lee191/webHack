@@ -14,5 +14,5 @@
     }
 
     // 리다이렉트
-    response.sendRedirect("../index.jsp");
+    response.sendRedirect("/index.jsp");
 %>

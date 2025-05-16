@@ -33,6 +33,7 @@
             isLoggedIn = true;
         } catch (Exception e) {
             isLoggedIn = false;
+            e.printStackTrace(); // 디버깅: 콘솔에서 JWT 파싱 예외 확인
         }
     }
 
@@ -42,10 +43,12 @@
     }
 
     String intro = request.getParameter("intro");
-
+    String dbURL = System.getenv("DB_URL");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_database", "test", "test");
+        Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
         String sql = "UPDATE users SET introduction = ? WHERE username = ?";
         PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, intro);

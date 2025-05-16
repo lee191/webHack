@@ -10,6 +10,10 @@
     String username = "", email = "";
     String token = null;
 
+    String dbURL = System.getenv("DB_URL");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
+
     Cookie[] cookies = request.getCookies();
     if (cookies != null) {
         for (Cookie cookie : cookies) {
@@ -43,7 +47,7 @@
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_database", "test", "test");
+        Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
         PreparedStatement pstmt = conn.prepareStatement("SELECT email FROM users WHERE username = ?");
         pstmt.setString(1, username);
         ResultSet rs = pstmt.executeQuery();

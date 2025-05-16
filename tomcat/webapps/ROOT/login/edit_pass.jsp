@@ -26,6 +26,10 @@
     String email = request.getParameter("email");
     String newPassword = request.getParameter("newPassword");
 
+    String dbURL = System.getenv("DB_URL");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
+
     if (username != null && email != null && newPassword != null) {
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -33,7 +37,7 @@
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_database", "test", "test");
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
 
             // 1. 사용자 존재 확인
             String checkSql = "SELECT * FROM users WHERE username = ? AND email = ?";

@@ -68,12 +68,13 @@
     Connection conn = null;
     PreparedStatement pstmt = null;
 
+    String dbURL = System.getenv("DB_URL");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
+
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/my_database?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC",
-            "test", "test"
-        );
+        conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
         String sql = "INSERT INTO posts (username, title, content, filename) VALUES (?, ?, ?, ?)";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, username);
