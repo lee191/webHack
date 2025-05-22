@@ -26,6 +26,7 @@ if (token != null) {
         Key key = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
         Claims claims = Jwts.parserBuilder()
             .setSigningKey(key)
+            .setAllowedClockSkewSeconds(60)
             .build()
             .parseClaimsJws(token)
             .getBody();

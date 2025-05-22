@@ -99,3 +99,22 @@
 16-May-2025 16:06:28.178 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack/tomcat/webapps/manager]에 대한 배치가 [1,629] 밀리초에 완료되었습니다.
 16-May-2025 16:06:28.191 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
 16-May-2025 16:06:28.228 정보 [main] org.apache.catalina.startup.Catalina.start 서버가 [7539] 밀리초 내에 시작되었습니다.
+16-May-2025 17:17:00.444 경고 [main] org.apache.catalina.core.StandardServer.await 셧다운 명령을 위해 listen하고 있는 소켓이, accept()를 호출 한 후, 예기치 않은 제한 시간 초과([4,232,155] 밀리초)를 발생시켰습니다. 버그 56684가 발생한 경우일까요?
+	java.net.SocketTimeoutException: Accept timed out
+		at java.base/java.net.PlainSocketImpl.socketAccept(Native Method)
+		at java.base/java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:474)
+		at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:565)
+		at java.base/java.net.ServerSocket.accept(ServerSocket.java:533)
+		at org.apache.catalina.core.StandardServer.await(StandardServer.java:561)
+		at org.apache.catalina.startup.Catalina.await(Catalina.java:829)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:777)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+16-May-2025 17:17:00.549 정보 [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8080"]을(를) 일시 정지 중
+16-May-2025 17:17:00.736 정보 [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+16-May-2025 17:17:01.666 정보 [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8080"]을(를) 중지시킵니다.
+16-May-2025 17:17:02.023 정보 [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8080"]을(를) 소멸시킵니다.

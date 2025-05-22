@@ -14,7 +14,7 @@
             // 사용자 입력을 명령어에 직접 삽입 (취약점 유지)
             String cmd = "mysqladmin -h " + target + " -u " + dbUser + " -p" + dbPass + " ping";
 
-            Process proc = Runtime.getRuntime().exec(new String[]{"/bin/sh", "-c", cmd});
+            Process proc = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", cmd});
             BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
             String line;
 %>
