@@ -1,0 +1,147 @@
+/* 전체 배경 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #121212;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 네비게이션 바 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1c1c1c;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e53935;
+    text-decoration: none;
+}
+
+.logo .white-text {
+    color: #fff;
+}
+
+.navbar-right {
+    display: flex;           /* 가로 정렬을 위한 핵심 */
+    align-items: center;
+    gap: 30px;               /* 링크 간 간격 */
+    margin-right: 40px;
+}
+
+.navbar-right a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.navbar-right a:hover {
+    color: #e53935;
+}
+
+/* 로그인 박스 컨테이너 */
+.login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+
+/* 제목 */
+h1 {
+    color: #ffffff;
+    font-size: 2.4em;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* 로그인/회원가입 폼 */
+form {
+    background-color: #1e1e1e;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 360px;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+/* 라벨 */
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #dddddd;
+}
+
+/* 입력 필드 */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    font-size: 1em;
+    color: #fff;
+    margin-bottom: 16px;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #e53935;
+    background-color: #333;
+    box-shadow: 0 0 6px #e53935aa;
+}
+
+/* 버튼 */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.03);
+}
+
+/* 하단 링크 */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #bbbbbb;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #e53935;
+    text-decoration: underline;
+}

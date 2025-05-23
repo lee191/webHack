@@ -1,0 +1,716 @@
+09-May-2025 09:51:41.607 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+09-May-2025 09:51:41.609 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+09-May-2025 09:51:41.611 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@38f2342b')
+09-May-2025 10:45:40.295 심각 [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [108] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+105:                 Class.forName("com.mysql.cj.jdbc.Driver");
+106:                 conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+107: 
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+
+
+JSP 파일 [/board/board.jsp]의 [111] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+112:                 } else {
+113:                     String sql = "SELECT id, username, title, created_at FROM posts ORDER BY created_at DESC LIMIT 10";
+114:                     pstmt = conn.prepareStatement(sql);
+
+
+JSP 파일 [/board/board.jsp]의 [117] 행에서 오류가 발생했습니다.
+sql cannot be resolved to a variable
+114:                     pstmt = conn.prepareStatement(sql);
+115:                 }
+116: 
+117:                 pstmt = conn.prepareStatement(sql);
+118:                 rs = pstmt.executeQuery();
+119: 
+120:                 int count = 0;
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [108] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+105:                 Class.forName("com.mysql.cj.jdbc.Driver");
+106:                 conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+107: 
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+
+
+JSP 파일 [/board/board.jsp]의 [111] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+112:                 } else {
+113:                     String sql = "SELECT id, username, title, created_at FROM posts ORDER BY created_at DESC LIMIT 10";
+114:                     pstmt = conn.prepareStatement(sql);
+
+
+JSP 파일 [/board/board.jsp]의 [117] 행에서 오류가 발생했습니다.
+sql cannot be resolved to a variable
+114:                     pstmt = conn.prepareStatement(sql);
+115:                 }
+116: 
+117:                 pstmt = conn.prepareStatement(sql);
+118:                 rs = pstmt.executeQuery();
+119: 
+120:                 int count = 0;
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+09-May-2025 10:45:46.392 심각 [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [108] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+105:                 Class.forName("com.mysql.cj.jdbc.Driver");
+106:                 conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+107: 
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+
+
+JSP 파일 [/board/board.jsp]의 [111] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+112:                 } else {
+113:                     String sql = "SELECT id, username, title, created_at FROM posts ORDER BY created_at DESC LIMIT 10";
+114:                     pstmt = conn.prepareStatement(sql);
+
+
+JSP 파일 [/board/board.jsp]의 [117] 행에서 오류가 발생했습니다.
+sql cannot be resolved to a variable
+114:                     pstmt = conn.prepareStatement(sql);
+115:                 }
+116: 
+117:                 pstmt = conn.prepareStatement(sql);
+118:                 rs = pstmt.executeQuery();
+119: 
+120:                 int count = 0;
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [108] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+105:                 Class.forName("com.mysql.cj.jdbc.Driver");
+106:                 conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+107: 
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+
+
+JSP 파일 [/board/board.jsp]의 [111] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+112:                 } else {
+113:                     String sql = "SELECT id, username, title, created_at FROM posts ORDER BY created_at DESC LIMIT 10";
+114:                     pstmt = conn.prepareStatement(sql);
+
+
+JSP 파일 [/board/board.jsp]의 [117] 행에서 오류가 발생했습니다.
+sql cannot be resolved to a variable
+114:                     pstmt = conn.prepareStatement(sql);
+115:                 }
+116: 
+117:                 pstmt = conn.prepareStatement(sql);
+118:                 rs = pstmt.executeQuery();
+119: 
+120:                 int count = 0;
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+09-May-2025 10:45:52.266 심각 [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [108] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+105:                 Class.forName("com.mysql.cj.jdbc.Driver");
+106:                 conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+107: 
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+
+
+JSP 파일 [/board/board.jsp]의 [111] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+112:                 } else {
+113:                     String sql = "SELECT id, username, title, created_at FROM posts ORDER BY created_at DESC LIMIT 10";
+114:                     pstmt = conn.prepareStatement(sql);
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [108] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+105:                 Class.forName("com.mysql.cj.jdbc.Driver");
+106:                 conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+107: 
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+
+
+JSP 파일 [/board/board.jsp]의 [111] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                     pstmt.setString(1, name);
+112:                 } else {
+113:                     String sql = "SELECT id, username, title, created_at FROM posts ORDER BY created_at DESC LIMIT 10";
+114:                     pstmt = conn.prepareStatement(sql);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+09-May-2025 10:46:38.079 심각 [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [108] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+105:                 Class.forName("com.mysql.cj.jdbc.Driver");
+106:                 conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+107: 
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                 } else {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [108] 행에서 오류가 발생했습니다.
+name cannot be resolved to a variable
+105:                 Class.forName("com.mysql.cj.jdbc.Driver");
+106:                 conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+107: 
+108:                 if (name != null) {
+109:                     String sql = "SELECT id, username, title, created_at FROM posts WHERE title = ? ORDER BY created_at DESC LIMIT 10";
+110:                     pstmt = conn.prepareStatement(sql);
+111:                 } else {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+09-May-2025 10:52:11.052 심각 [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [121] 행에서 오류가 발생했습니다.
+trimmedQuery cannot be resolved to a variable
+118:                 pstmt = conn.prepareStatement(sql);
+119: 
+120:                 if (isSearch) {
+121:                     pstmt.setString(1, "%" + trimmedQuery + "%");
+122:                     pstmt.setString(2, "%" + trimmedQuery + "%");
+123:                 }
+124: 
+
+
+JSP 파일 [/board/board.jsp]의 [122] 행에서 오류가 발생했습니다.
+trimmedQuery cannot be resolved to a variable
+119: 
+120:                 if (isSearch) {
+121:                     pstmt.setString(1, "%" + trimmedQuery + "%");
+122:                     pstmt.setString(2, "%" + trimmedQuery + "%");
+123:                 }
+124: 
+125:                 rs = pstmt.executeQuery();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [121] 행에서 오류가 발생했습니다.
+trimmedQuery cannot be resolved to a variable
+118:                 pstmt = conn.prepareStatement(sql);
+119: 
+120:                 if (isSearch) {
+121:                     pstmt.setString(1, "%" + trimmedQuery + "%");
+122:                     pstmt.setString(2, "%" + trimmedQuery + "%");
+123:                 }
+124: 
+
+
+JSP 파일 [/board/board.jsp]의 [122] 행에서 오류가 발생했습니다.
+trimmedQuery cannot be resolved to a variable
+119: 
+120:                 if (isSearch) {
+121:                     pstmt.setString(1, "%" + trimmedQuery + "%");
+122:                     pstmt.setString(2, "%" + trimmedQuery + "%");
+123:                 }
+124: 
+125:                 rs = pstmt.executeQuery();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+09-May-2025 10:54:53.664 심각 [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [123] 행에서 오류가 발생했습니다.
+trimmedQuery cannot be resolved to a variable
+120:                 pstmt = conn.prepareStatement(sql);
+121: 
+122:                 if (isSearch) {
+123:                     pstmt.setString(1, "%" + trimmedQuery + "%");
+124:                     pstmt.setString(2, "%" + trimmedQuery + "%");
+125:                 }
+126: 
+
+
+JSP 파일 [/board/board.jsp]의 [124] 행에서 오류가 발생했습니다.
+trimmedQuery cannot be resolved to a variable
+121: 
+122:                 if (isSearch) {
+123:                     pstmt.setString(1, "%" + trimmedQuery + "%");
+124:                     pstmt.setString(2, "%" + trimmedQuery + "%");
+125:                 }
+126: 
+127:                 rs = pstmt.executeQuery();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [123] 행에서 오류가 발생했습니다.
+trimmedQuery cannot be resolved to a variable
+120:                 pstmt = conn.prepareStatement(sql);
+121: 
+122:                 if (isSearch) {
+123:                     pstmt.setString(1, "%" + trimmedQuery + "%");
+124:                     pstmt.setString(2, "%" + trimmedQuery + "%");
+125:                 }
+126: 
+
+
+JSP 파일 [/board/board.jsp]의 [124] 행에서 오류가 발생했습니다.
+trimmedQuery cannot be resolved to a variable
+121: 
+122:                 if (isSearch) {
+123:                     pstmt.setString(1, "%" + trimmedQuery + "%");
+124:                     pstmt.setString(2, "%" + trimmedQuery + "%");
+125:                 }
+126: 
+127:                 rs = pstmt.executeQuery();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+09-May-2025 10:55:26.148 심각 [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [51] 행에서 오류가 발생했습니다.
+Syntax error on token "null", instanceof expected after this token
+48:     ResultSet rs = null;
+49: 
+50:     String query = request.getParameter("query");
+51:     if (query == null or query == "") query = "";
+52:     String trimmedQuery = query.trim();
+53:     boolean isSearch = !trimmedQuery.isEmpty();
+54: %>
+
+
+JSP 파일 [/board/board.jsp]의 [51] 행에서 오류가 발생했습니다.
+The Java feature 'Pattern Matching in instanceof Expressions' is only available with source level 16 and above
+48:     ResultSet rs = null;
+49: 
+50:     String query = request.getParameter("query");
+51:     if (query == null or query == "") query = "";
+52:     String trimmedQuery = query.trim();
+53:     boolean isSearch = !trimmedQuery.isEmpty();
+54: %>
+
+
+JSP 파일 [/board/board.jsp]의 [51] 행에서 오류가 발생했습니다.
+or cannot be resolved to a type
+48:     ResultSet rs = null;
+49: 
+50:     String query = request.getParameter("query");
+51:     if (query == null or query == "") query = "";
+52:     String trimmedQuery = query.trim();
+53:     boolean isSearch = !trimmedQuery.isEmpty();
+54: %>
+
+
+JSP 파일 [/board/board.jsp]의 [51] 행에서 오류가 발생했습니다.
+Duplicate local variable query
+48:     ResultSet rs = null;
+49: 
+50:     String query = request.getParameter("query");
+51:     if (query == null or query == "") query = "";
+52:     String trimmedQuery = query.trim();
+53:     boolean isSearch = !trimmedQuery.isEmpty();
+54: %>
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [51] 행에서 오류가 발생했습니다.
+Syntax error on token "null", instanceof expected after this token
+48:     ResultSet rs = null;
+49: 
+50:     String query = request.getParameter("query");
+51:     if (query == null or query == "") query = "";
+52:     String trimmedQuery = query.trim();
+53:     boolean isSearch = !trimmedQuery.isEmpty();
+54: %>
+
+
+JSP 파일 [/board/board.jsp]의 [51] 행에서 오류가 발생했습니다.
+The Java feature 'Pattern Matching in instanceof Expressions' is only available with source level 16 and above
+48:     ResultSet rs = null;
+49: 
+50:     String query = request.getParameter("query");
+51:     if (query == null or query == "") query = "";
+52:     String trimmedQuery = query.trim();
+53:     boolean isSearch = !trimmedQuery.isEmpty();
+54: %>
+
+
+JSP 파일 [/board/board.jsp]의 [51] 행에서 오류가 발생했습니다.
+or cannot be resolved to a type
+48:     ResultSet rs = null;
+49: 
+50:     String query = request.getParameter("query");
+51:     if (query == null or query == "") query = "";
+52:     String trimmedQuery = query.trim();
+53:     boolean isSearch = !trimmedQuery.isEmpty();
+54: %>
+
+
+JSP 파일 [/board/board.jsp]의 [51] 행에서 오류가 발생했습니다.
+Duplicate local variable query
+48:     ResultSet rs = null;
+49: 
+50:     String query = request.getParameter("query");
+51:     if (query == null or query == "") query = "";
+52:     String trimmedQuery = query.trim();
+53:     boolean isSearch = !trimmedQuery.isEmpty();
+54: %>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+09-May-2025 13:06:45.549 정보 [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+09-May-2025 13:06:45.555 정보 [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+09-May-2025 17:04:52.137 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+09-May-2025 17:04:52.137 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+09-May-2025 17:04:52.139 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@7e584f3c')
+09-May-2025 17:18:33.242 심각 [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/admin.jsp]의 [61] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+58:         <div class="navbar-right">
+59:             <a href="/board/board.jsp">BLOG</a>
+60:             <a href="#">STORE</a>
+61:             <% if (isLoggedIn) { %>
+62:                 <a href="/login/logout.jsp">LOGOUT</a>
+63:             <% } else { %>
+64:                 <a href="/login/login.jsp">LOGIN</a>
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/admin/admin.jsp]의 [61] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+58:         <div class="navbar-right">
+59:             <a href="/board/board.jsp">BLOG</a>
+60:             <a href="#">STORE</a>
+61:             <% if (isLoggedIn) { %>
+62:                 <a href="/login/logout.jsp">LOGOUT</a>
+63:             <% } else { %>
+64:                 <a href="/login/login.jsp">LOGIN</a>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)

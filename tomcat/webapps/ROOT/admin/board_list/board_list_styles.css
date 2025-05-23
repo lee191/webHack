@@ -1,0 +1,75 @@
+/* 전체 배경 및 기본 폰트 설정 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #111111, #2c2c2c);
+    color: #f0f0f0;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 테이블 스타일 */
+table {
+    width: 95%;
+    margin: 0 auto 30px auto;
+    border-collapse: collapse;
+    background-color: #1f1f1f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 헤더 셀 스타일 */
+th {
+    background-color: #333333;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 14px 20px;
+    border-bottom: 1px solid #444;
+}
+
+/* 데이터 셀 스타일 */
+td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #333;
+    color: #e0e0e0;
+    word-break: break-word;
+}
+
+/* 테이블 행 호버 효과 */
+tr:hover {
+    background-color: #2a2a2a;
+}
+
+/* 버튼 공통 스타일 */
+button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: #6a1b9a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* 버튼 호버 효과 */
+button:hover {
+    background-color: #8e24aa;
+    transform: scale(1.05);
+}
+
+/* form 간격 정리 */
+form {
+    display: inline-block;
+}

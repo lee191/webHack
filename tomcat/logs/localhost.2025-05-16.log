@@ -1,0 +1,735 @@
+16-May-2025 09:57:23.772 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-May-2025 09:57:23.772 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-May-2025 09:57:23.775 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5409305f')
+16-May-2025 14:31:07.303 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-May-2025 14:31:07.303 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+16-May-2025 16:06:25.527 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-May-2025 16:06:25.527 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-May-2025 16:06:25.530 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@6fb9dab6')
+16-May-2025 16:14:45.784 심각 [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+관리자.일반 cannot be resolved to a type
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "/", . expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "분기", ; expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+관리자.일반 cannot be resolved to a type
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "/", . expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "분기", ; expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+16-May-2025 16:15:12.227 심각 [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+관리자.일반 cannot be resolved to a type
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "/", . expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "분기", ; expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+관리자.일반 cannot be resolved to a type
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "/", . expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "분기", ; expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+16-May-2025 16:15:26.077 심각 [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+관리자.일반 cannot be resolved to a type
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "/", . expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "분기", ; expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+관리자.일반 cannot be resolved to a type
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "/", . expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+JSP 파일 [/login/processLogin.jsp]의 [101] 행에서 오류가 발생했습니다.
+Syntax error on token "분기", ; expected
+98:         authCookie.setPath("/");
+99:         response.addCookie(authCookie);
+100: 
+101:         관리자/일반 사용자 분기
+102:         if (username.equals("admin")) {
+103:             response.sendRedirect("/admin/index.jsp");
+104:         } else {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+16-May-2025 16:16:57.200 심각 [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+script cannot be resolved to a type
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Syntax error, insert "super ( ) ;" to complete Statement
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Constructor call must be the first statement in a constructor
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Invalid character constant
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Invalid character constant
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Syntax error on tokens, delete these tokens
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [58] 행에서 오류가 발생했습니다.
+Syntax error, insert ")" to complete Expression
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+61:         rs.close();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+script cannot be resolved to a type
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Syntax error, insert "super ( ) ;" to complete Statement
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Constructor call must be the first statement in a constructor
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Invalid character constant
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Invalid character constant
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [57] 행에서 오류가 발생했습니다.
+Syntax error on tokens, delete these tokens
+54: 
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+
+
+JSP 파일 [/login/processLogin.jsp]의 [58] 행에서 오류가 발생했습니다.
+Syntax error, insert ")" to complete Expression
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             <script>alert('환영합니다, " + realUsername + "님!');</script>
+58:             isValidUser = true;
+59:         }
+60: 
+61:         rs.close();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+16-May-2025 16:18:27.898 심각 [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [82] 행에서 오류가 발생했습니다.
+realUsername cannot be resolved to a variable
+79: 
+80:     // 4. 로그인 성공 시 JWT 생성 및 쿠키 저장
+81:     if (isValidUser) {
+82:         out.println("<script>alert('환영합니다, " + realUsername + "님!');</script>");
+83:         // HS256 서명용 고정 키
+84:         byte[] keyBytes = "thisIsASecretKeyThatIsAtLeast32Bytes!".getBytes("UTF-8");
+85:         Key signingKey = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [82] 행에서 오류가 발생했습니다.
+realUsername cannot be resolved to a variable
+79: 
+80:     // 4. 로그인 성공 시 JWT 생성 및 쿠키 저장
+81:     if (isValidUser) {
+82:         out.println("<script>alert('환영합니다, " + realUsername + "님!');</script>");
+83:         // HS256 서명용 고정 키
+84:         byte[] keyBytes = "thisIsASecretKeyThatIsAtLeast32Bytes!".getBytes("UTF-8");
+85:         Key signingKey = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+16-May-2025 16:19:16.948 심각 [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [58] 행에서 오류가 발생했습니다.
+The method sleep(int) is undefined for the type processLogin_jsp
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             out.println("<script>alert('환영합니다, " + realUsername + "님!');</script>");
+58:             sleep(1000); // 1초 대기
+59:             isValidUser = true;
+60:         }
+61: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [58] 행에서 오류가 발생했습니다.
+The method sleep(int) is undefined for the type processLogin_jsp
+55:         if (rs.next()) {
+56:             String realUsername = rs.getString("username");  // SQL 결과에서 username 컬럼 값
+57:             out.println("<script>alert('환영합니다, " + realUsername + "님!');</script>");
+58:             sleep(1000); // 1초 대기
+59:             isValidUser = true;
+60:         }
+61: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+16-May-2025 16:27:03.256 심각 [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [70] 행에서 오류가 발생했습니다.
+Syntax error, insert "else Statement" to complete IfStatement
+67:         stmt.close();
+68:         conn.close();
+69: 
+70:     }catch (Exception e) {
+71:     // Error-based SQLi용 에러 메시지 노출
+72:     out.println("<h3>SQL 오류 발생!</h3>");
+73:     out.println("<pre>");
+
+
+JSP 파일 [/login/processLogin.jsp]의 [70] 행에서 오류가 발생했습니다.
+Syntax error, insert "}" to complete Block
+67:         stmt.close();
+68:         conn.close();
+69: 
+70:     }catch (Exception e) {
+71:     // Error-based SQLi용 에러 메시지 노출
+72:     out.println("<h3>SQL 오류 발생!</h3>");
+73:     out.println("<pre>");
+
+
+코드 생성된 자바 파일 [/root/project/webHack/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/login/processLogin_jsp.java]의 [273] 행에서 오류가 발생했습니다.
+Syntax error on token "}", delete this token
+
+코드 생성된 자바 파일 [/root/project/webHack/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/login/processLogin_jsp.java]의 [274] 행에서 오류가 발생했습니다.
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/login/processLogin.jsp]의 [70] 행에서 오류가 발생했습니다.
+Syntax error, insert "else Statement" to complete IfStatement
+67:         stmt.close();
+68:         conn.close();
+69: 
+70:     }catch (Exception e) {
+71:     // Error-based SQLi용 에러 메시지 노출
+72:     out.println("<h3>SQL 오류 발생!</h3>");
+73:     out.println("<pre>");
+
+
+JSP 파일 [/login/processLogin.jsp]의 [70] 행에서 오류가 발생했습니다.
+Syntax error, insert "}" to complete Block
+67:         stmt.close();
+68:         conn.close();
+69: 
+70:     }catch (Exception e) {
+71:     // Error-based SQLi용 에러 메시지 노출
+72:     out.println("<h3>SQL 오류 발생!</h3>");
+73:     out.println("<pre>");
+
+
+코드 생성된 자바 파일 [/root/project/webHack/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/login/processLogin_jsp.java]의 [273] 행에서 오류가 발생했습니다.
+Syntax error on token "}", delete this token
+
+코드 생성된 자바 파일 [/root/project/webHack/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/login/processLogin_jsp.java]의 [274] 행에서 오류가 발생했습니다.
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+16-May-2025 17:17:01.321 정보 [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-May-2025 17:17:01.329 정보 [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
