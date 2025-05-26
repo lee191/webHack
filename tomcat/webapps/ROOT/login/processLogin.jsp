@@ -26,6 +26,17 @@ request.setCharacterEncoding("UTF-8");
 String id = request.getParameter("username");
 String password = request.getParameter("password");
 
+// 브루트포스 방지 로직
+Integer failCount = (Integer) session.getAttribute("failCount");
+Long lockTime = (Long) session.getAttribute("lockTime");
+long now = System.currentTimeMillis();
+
+if (lockTime != null && now < lockTime) {
+    out.println("<script>alert('로그인 시도 제한 초과. 잠시 후 다시 시도하세요.'); history.back();</script>");
+    return;
+}
+if (failCount == null) failCount = 0;
+
 String dbURL = System.getenv("DB_URL");
 String dbUser = System.getenv("DB_USER");
 String dbPassword = System.getenv("DB_PASSWORD");
@@ -43,8 +54,6 @@ try {
                 if (rs.next()) {
                     String dbHashed = rs.getString("password");
                     username = rs.getString("username");
-
-                    // 입력 비밀번호 검증
                     isValidUser = verifyPassword(password, dbHashed);
                 }
             }
@@ -55,6 +64,9 @@ try {
 }
 
 if (isValidUser) {
+    session.removeAttribute("failCount");
+    session.removeAttribute("lockTime");
+
     byte[] keyBytes = System.getenv("JWT_SECRET").getBytes("UTF-8");
     Key signingKey = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
 
@@ -69,7 +81,7 @@ if (isValidUser) {
     authCookie.setHttpOnly(true);
     authCookie.setMaxAge(3600);
     authCookie.setPath("/");
-    // authCookie.setSecure(true); // HTTPS 환경에서만
+    // authCookie.setSecure(true); // HTTPS 환경에서만 적용
 
     response.addCookie(authCookie);
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -82,11 +94,13 @@ if (isValidUser) {
         response.sendRedirect("/index.jsp");
     }
 } else {
-%>
-<script>
-    alert("아이디 또는 비밀번호가 잘못되었습니다.");
-    history.back();
-</script>
-<%
+    failCount++;
+    session.setAttribute("failCount", failCount);
+    if (failCount >= 5) {
+        session.setAttribute("lockTime", now + (10 * 60 * 1000)); // 10분 차단
+        out.println("<script>alert('로그인 5회 실패로 10분간 차단됩니다.'); history.back();</script>");
+    } else {
+        out.println("<script>alert('아이디 또는 비밀번호가 잘못되었습니다.'); history.back();</script>");
+    }
 }
 %>

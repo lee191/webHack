@@ -5,7 +5,7 @@
 <%@ page import="java.io.BufferedReader, java.io.InputStreamReader" %>
 
 <%
-    // Multipart 설정 (JSP 내에서는 Tomcat 9 이상에서 web.xml 권장)
+    // Multipart 설정
     request.setAttribute("org.apache.catalina.multipartConfig",
         new javax.servlet.MultipartConfigElement(System.getProperty("java.io.tmpdir")));
     request.setCharacterEncoding("UTF-8");
@@ -77,7 +77,16 @@
         out.println("<script>alert('소개글 입력 오류'); history.back();</script>");
         return;
     }
-    intro = intro.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+
+    // 3-1. XSS + SSTI 방지 필터링
+    intro = intro
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll("\\$\\{", "&#36;&#123;")
+        .replaceAll("\\{\\{", "&#123;&#123;")
+        .replaceAll("\\}\\}", "&#125;&#125;")
+        .replaceAll("<%", "&lt;%")
+        .replaceAll("%" + ">", "%&gt;");
 
     // 4. DB 저장
     String dbURL = System.getenv("DB_URL");
