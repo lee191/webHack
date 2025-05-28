@@ -24,8 +24,7 @@
 
     <div class="login-container">
         <h1>회원가입</h1>
-
-        <input type="hidden" name="csrfToken" value="<%= session.getAttribute("csrfToken") %>">
+        <form action="signupProcess.jsp" method="post">
             <input type="hidden" name="csrfToken" value="<%= csrfToken %>">
 
             <label for="username">아이디</label>

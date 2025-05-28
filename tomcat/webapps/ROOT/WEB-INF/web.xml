@@ -12,7 +12,7 @@
     <servlet-name>WriteProcess</servlet-name>
     <jsp-file>/write/writeProcess.jsp</jsp-file>
     <multipart-config>
-      <location>/home/tomcat/uploads_tmp</location>
+      <location>/home/webadmin/uploads_tmp</location>
       <max-file-size>10485760</max-file-size> <!-- 10MB -->
       <max-request-size>20971520</max-request-size> <!-- 20MB -->
       <file-size-threshold>0</file-size-threshold>
@@ -56,5 +56,19 @@
     <servlet-name>ssi</servlet-name>
     <url-pattern>*.shtml</url-pattern>
   </servlet-mapping>
+
+
+  <filter>
+      <filter-name>Admin404Filter</filter-name>
+      <filter-class>com.example.Admin404Filter</filter-class>
+  </filter>
+  <filter-mapping>
+      <filter-name>Admin404Filter</filter-name>
+      <url-pattern>/admin</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>Admin404Filter</filter-name>
+      <url-pattern>/admin/</url-pattern>
+  </filter-mapping>
 
 </web-app>

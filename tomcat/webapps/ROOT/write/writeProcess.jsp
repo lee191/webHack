@@ -66,7 +66,7 @@ String filename = "";
 String xmlInput = request.getParameter("xml");
 
 // 4. 파일 업로드 처리
-String uploadPath = application.getRealPath("/uploads");
+String uploadPath = application.getRealPath("/WEB-INF/uploads");
 File uploadDir = new File(uploadPath);
 if (!uploadDir.exists()) uploadDir.mkdirs();
 

@@ -38,12 +38,6 @@
     }
     session.removeAttribute("csrfToken");
 
-    if (csrfToken == null || sessionToken == null || !csrfToken.equals(sessionToken)) {
-        getServletContext().log("CSRF 토큰 오류: 요청 CSRF 토큰 = " + csrfToken + ", 세션 CSRF 토큰 = " + sessionToken);
-        out.println("<script>alert('CSRF 토큰이 유효하지 않습니다.'); history.back();</script>");
-        return;
-    }
-    session.removeAttribute("csrfToken");
 
     // 2. 사용자 입력 수집
     String username = request.getParameter("username");

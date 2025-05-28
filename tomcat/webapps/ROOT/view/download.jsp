@@ -11,7 +11,7 @@ if (fileName == null || fileName.contains("..") || fileName.contains("/") || fil
 }
 
 // 2. 업로드 경로 설정
-String uploadPath = application.getRealPath("uploads");
+String uploadPath = application.getRealPath("/WEB-INF/uploads");
 File file = new File(uploadPath, fileName);
 
 // 3. Canonical 경로 비교 (디렉토리 탈출 방지)
