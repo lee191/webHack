@@ -39,6 +39,7 @@ label {
 
 /* 입력창 스타일 */
 input[type="text"],
+input[type="email"], 
 input[type="password"] {
     width: 100%;
     padding: 10px 12px;

@@ -14,7 +14,7 @@ session.setAttribute("csrfToken", csrfToken);
 <head>
     <meta charset="UTF-8">
     <title>비밀번호 재설정 요청</title>
-    <link rel="stylesheet" href="/login/request_reset_styles.css">
+    <link rel="stylesheet" href="/login/edit_pass_styles.css">
 </head>
 <body>
     <form method="post" action="send_code.jsp">
