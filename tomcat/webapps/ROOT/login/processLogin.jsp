@@ -72,7 +72,6 @@
             .setSubject(username)
             .setIssuedAt(new java.util.Date())
             .setExpiration(new java.util.Date(System.currentTimeMillis() + 3600000))
-            .signWith(signingKey, SignatureAlgorithm.HS256)
             .compact();
 
         Cookie authCookie = new Cookie("authToken", jwtToken);
