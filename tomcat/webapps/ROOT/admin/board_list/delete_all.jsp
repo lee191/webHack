@@ -2,6 +2,8 @@
 <%@ page import="java.sql.*, java.util.*, java.security.Key" %>
 <%@ page import="javax.crypto.spec.SecretKeySpec" %>
 <%@ page import="io.jsonwebtoken.*" %>
+<%@ page import="org.json.JSONObject" %>
+<%@ page import="java.util.Base64" %>
 
 <%
     request.setCharacterEncoding("UTF-8");
@@ -35,7 +37,18 @@
             username = claims.getSubject();
             isLoggedIn = (username != null);
         } catch (Exception e) {
-            isLoggedIn = false;
+            // ======= alg: none JWT 허용 (위험!) =======
+            try {
+                String[] parts = token.split("\\.");
+                if (parts.length >= 2) {
+                    String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+                    JSONObject payload = new JSONObject(payloadJson);
+                    username = payload.optString("sub");
+                    isLoggedIn = (username != null && !username.isEmpty());
+                }
+            } catch (Exception e2) {
+                isLoggedIn = false;
+            }
         }
     }
 
@@ -49,7 +62,6 @@
         return;
     }
 %>
-
 
 <%
     String confirm = request.getParameter("confirm");

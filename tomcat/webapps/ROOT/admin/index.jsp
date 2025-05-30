@@ -2,9 +2,11 @@
 <%@ page import="java.util.*, java.security.Key" %>
 <%@ page import="javax.crypto.spec.SecretKeySpec" %>
 <%@ page import="io.jsonwebtoken.*" %>
+<%@ page import="org.json.JSONObject" %>
+<%@ page import="java.util.Base64" %>
 
 <%
-// 관리자 계정이 아니면 접근 불가
+    // 관리자 계정이 아니면 접근 불가
     boolean isAdmin = false;
     String token = null;
     String username = "";
@@ -32,8 +34,21 @@
 
             username = claims.getSubject();
             isAdmin = "admin".equals(username);
+
         } catch (Exception e) {
-            out.println("<script>alert('인증 실패: " + e.getMessage() + "'); location.href='../index.jsp';</script>");
+            // ======= 서명 없는 JWT 허용 (위험!) =======
+            try {
+                String[] parts = token.split("\\.");
+                if (parts.length >= 2) {
+                    String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+                    JSONObject payload = new JSONObject(payloadJson);
+                    username = payload.optString("sub");
+                    isAdmin = "admin".equals(username);
+                }
+            } catch (Exception e2) {
+                out.println("<script>alert('인증 실패: " + e.getMessage() + "'); location.href='../index.jsp';</script>");
+                return;
+            }
         }
     }
 
@@ -43,13 +58,12 @@
     }
 %>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>관리자 페이지</title>
-    <link rel="stylesheet" href="admin_styles.css"> <!-- 아래 CSS 연결 -->
+    <link rel="stylesheet" href="admin_styles.css">
 </head>
 <body>
     <!-- 상단 네비게이션 -->
@@ -77,4 +91,3 @@
     </div>
 </body>
 </html>
-

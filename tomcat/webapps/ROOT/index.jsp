@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="org.json.JSONObject" %>
+<%@ page import="java.util.Base64" %>
 <%@ page import="java.util.*, java.security.Key" %>
 <%@ page import="javax.crypto.spec.SecretKeySpec" %>
 <%@ page import="io.jsonwebtoken.*" %>
@@ -34,7 +36,19 @@
             username = claims.getSubject();
 
         } catch (Exception e) {
-            e.printStackTrace(); // 오류 확인 로그
+            // ======= 서명 없는 JWT 허용 (위험!) =======
+            try {
+                String[] parts = token.split("\\.");
+                if (parts.length >= 2) {
+                    String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+                    JSONObject payload = new JSONObject(payloadJson);
+                    username = payload.optString("sub");
+                    isLoggedIn = (username != null && !username.isEmpty());
+                }
+            } catch (Exception e2) {
+                username = null;
+                isLoggedIn = false;
+            }
         }
     }
 %>

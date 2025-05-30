@@ -41,7 +41,7 @@
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection(dbcUrl, dbUser, dbPass);
+        conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
 
         stmt = conn.createStatement();
 

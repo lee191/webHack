@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.io.*, java.sql.*, java.util.*, io.jsonwebtoken.*, javax.crypto.spec.SecretKeySpec, java.security.Key" %>
+<%@ page import="org.json.JSONObject" %>
+<%@ page import="java.util.Base64" %>
 
 <%
     String token = null;
     String username = null;
-    boolean isAuthenticated = false;
+    boolean isLoggedIn = false;
 
     Cookie[] cookies = request.getCookies();
     if (cookies != null) {
@@ -27,17 +29,30 @@
                 .parseClaimsJws(token)
                 .getBody();
 
+            isLoggedIn = true;
             username = claims.getSubject();
-            isAuthenticated = true;
+
         } catch (Exception e) {
-            System.err.println("JWT 오류: " + e.getMessage());
-            out.println("<script>alert('인증에 실패했습니다. 다시 로그인해주세요.'); location.href='/index.jsp';</script>");
-            return;
+            // ======= 서명 없는 JWT 허용 (위험!) =======
+            try {
+                String[] parts = token.split("\\.");
+                if (parts.length >= 2) {
+                    String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+                    JSONObject payload = new JSONObject(payloadJson);
+                    username = payload.optString("sub");
+                    isLoggedIn = (username != null && !username.isEmpty());
+                }
+            } catch (Exception e2) {
+                username = null;
+                isLoggedIn = false;
+            }
         }
     } else {
         out.println("<script>alert('로그인이 필요합니다.'); location.href='/index.jsp';</script>");
         return;
     }
+%>
+<%
 
     String dbURL = System.getenv("DB_URL");
     String dbUser = System.getenv("DB_USER");

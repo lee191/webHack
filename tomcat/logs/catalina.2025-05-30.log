@@ -1,0 +1,101 @@
+30-May-2025 10:18:16.872 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/9.0.100
+30-May-2025 10:18:16.884 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Feb 13 2025 11:29:56 UTC
+30-May-2025 10:18:16.884 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  9.0.100.0
+30-May-2025 10:18:16.885 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Linux
+30-May-2025 10:18:16.885 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     5.14.0-587.el9.x86_64
+30-May-2025 10:18:16.885 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+30-May-2025 10:18:16.885 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           /usr/lib/jvm/java-11-openjdk-11.0.20.1.1-2.el9.x86_64
+30-May-2025 10:18:16.886 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          11.0.20.1+1-LTS
+30-May-2025 10:18:16.886 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Red Hat, Inc.
+30-May-2025 10:18:16.886 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /root/project/webHack_old/tomcat
+30-May-2025 10:18:16.887 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /root/project/webHack_old/tomcat
+30-May-2025 10:18:16.914 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+30-May-2025 10:18:16.914 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+30-May-2025 10:18:16.915 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+30-May-2025 10:18:16.916 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-May-2025 10:18:16.917 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-May-2025 10:18:16.917 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=/root/project/webHack_old/tomcat/conf/logging.properties
+30-May-2025 10:18:16.917 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-May-2025 10:18:16.917 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djdk.tls.ephemeralDHKeySize=2048
+30-May-2025 10:18:16.919 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+30-May-2025 10:18:16.919 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dsun.io.useCanonCaches=false
+30-May-2025 10:18:16.920 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-May-2025 10:18:16.920 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dignore.endorsed.dirs=
+30-May-2025 10:18:16.921 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=/root/project/webHack_old/tomcat
+30-May-2025 10:18:16.921 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=/root/project/webHack_old/tomcat
+30-May-2025 10:18:16.921 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=/root/project/webHack_old/tomcat/temp
+30-May-2025 10:18:16.925 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 프로덕션 환경들에서 최적의 성능을 제공하는, APR 기반 Apache Tomcat Native 라이브러리가, 다음 java.library.path에서 발견되지 않습니다: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-May-2025 10:18:17.583 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+30-May-2025 10:18:17.626 정보 [main] org.apache.catalina.startup.Catalina.load [1201] 밀리초 내에 서버가 초기화되었습니다.
+30-May-2025 10:18:17.745 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+30-May-2025 10:18:17.746 정보 [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/9.0.100]
+30-May-2025 10:18:17.780 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/ROOT]을(를) 배치합니다.
+30-May-2025 10:18:19.412 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:18:21.394 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/ROOT]에 대한 배치가 [3,613] 밀리초에 완료되었습니다.
+30-May-2025 10:18:21.395 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/docs]을(를) 배치합니다.
+30-May-2025 10:18:22.196 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:18:22.200 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/docs]에 대한 배치가 [805] 밀리초에 완료되었습니다.
+30-May-2025 10:18:22.201 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/examples]을(를) 배치합니다.
+30-May-2025 10:18:23.221 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:18:23.293 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/examples]에 대한 배치가 [1,092] 밀리초에 완료되었습니다.
+30-May-2025 10:18:23.293 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/host-manager]을(를) 배치합니다.
+30-May-2025 10:18:24.055 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:18:24.064 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/host-manager]에 대한 배치가 [770] 밀리초에 완료되었습니다.
+30-May-2025 10:18:24.065 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/manager]을(를) 배치합니다.
+30-May-2025 10:18:24.831 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:18:24.836 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/manager]에 대한 배치가 [772] 밀리초에 완료되었습니다.
+30-May-2025 10:18:24.854 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+30-May-2025 10:18:24.878 정보 [main] org.apache.catalina.startup.Catalina.start 서버가 [7251] 밀리초 내에 시작되었습니다.
+30-May-2025 10:25:50.928 정보 [main] org.apache.catalina.core.StandardServer.await 셧다운 포트를 통해 유효한 셧다운 명령을 받았습니다. 서버 인스턴스를 중지시킵니다.
+30-May-2025 10:25:50.930 정보 [main] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8080"]을(를) 일시 정지 중
+30-May-2025 10:25:50.933 정보 [main] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+30-May-2025 10:25:50.997 정보 [main] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8080"]을(를) 중지시킵니다.
+30-May-2025 10:25:51.017 정보 [main] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8080"]을(를) 소멸시킵니다.
+30-May-2025 10:25:53.435 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/9.0.100
+30-May-2025 10:25:53.445 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Feb 13 2025 11:29:56 UTC
+30-May-2025 10:25:53.446 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  9.0.100.0
+30-May-2025 10:25:53.446 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Linux
+30-May-2025 10:25:53.447 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     5.14.0-587.el9.x86_64
+30-May-2025 10:25:53.447 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+30-May-2025 10:25:53.447 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           /usr/lib/jvm/java-11-openjdk-11.0.20.1.1-2.el9.x86_64
+30-May-2025 10:25:53.447 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          11.0.20.1+1-LTS
+30-May-2025 10:25:53.448 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Red Hat, Inc.
+30-May-2025 10:25:53.448 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /root/project/webHack_old/tomcat
+30-May-2025 10:25:53.448 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /root/project/webHack_old/tomcat
+30-May-2025 10:25:53.473 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+30-May-2025 10:25:53.474 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+30-May-2025 10:25:53.474 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+30-May-2025 10:25:53.475 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-May-2025 10:25:53.475 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-May-2025 10:25:53.476 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=/root/project/webHack_old/tomcat/conf/logging.properties
+30-May-2025 10:25:53.477 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-May-2025 10:25:53.477 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djdk.tls.ephemeralDHKeySize=2048
+30-May-2025 10:25:53.477 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+30-May-2025 10:25:53.477 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dsun.io.useCanonCaches=false
+30-May-2025 10:25:53.478 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-May-2025 10:25:53.478 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dignore.endorsed.dirs=
+30-May-2025 10:25:53.478 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=/root/project/webHack_old/tomcat
+30-May-2025 10:25:53.478 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=/root/project/webHack_old/tomcat
+30-May-2025 10:25:53.478 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=/root/project/webHack_old/tomcat/temp
+30-May-2025 10:25:53.481 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 프로덕션 환경들에서 최적의 성능을 제공하는, APR 기반 Apache Tomcat Native 라이브러리가, 다음 java.library.path에서 발견되지 않습니다: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-May-2025 10:25:54.222 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+30-May-2025 10:25:54.272 정보 [main] org.apache.catalina.startup.Catalina.load [1265] 밀리초 내에 서버가 초기화되었습니다.
+30-May-2025 10:25:54.428 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+30-May-2025 10:25:54.430 정보 [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/9.0.100]
+30-May-2025 10:25:54.448 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/ROOT]을(를) 배치합니다.
+30-May-2025 10:25:56.073 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:25:56.343 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/ROOT]에 대한 배치가 [1,892] 밀리초에 완료되었습니다.
+30-May-2025 10:25:56.343 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/docs]을(를) 배치합니다.
+30-May-2025 10:25:57.151 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:25:57.155 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/docs]에 대한 배치가 [812] 밀리초에 완료되었습니다.
+30-May-2025 10:25:57.156 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/examples]을(를) 배치합니다.
+30-May-2025 10:25:58.222 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:25:58.290 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/examples]에 대한 배치가 [1,133] 밀리초에 완료되었습니다.
+30-May-2025 10:25:58.291 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/host-manager]을(를) 배치합니다.
+30-May-2025 10:25:59.074 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:25:59.090 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/host-manager]에 대한 배치가 [800] 밀리초에 완료되었습니다.
+30-May-2025 10:25:59.091 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/manager]을(를) 배치합니다.
+30-May-2025 10:25:59.820 정보 [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+30-May-2025 10:25:59.825 정보 [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/root/project/webHack_old/tomcat/webapps/manager]에 대한 배치가 [733] 밀리초에 완료되었습니다.
+30-May-2025 10:25:59.840 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+30-May-2025 10:25:59.863 정보 [main] org.apache.catalina.startup.Catalina.start 서버가 [5590] 밀리초 내에 시작되었습니다.

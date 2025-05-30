@@ -1,0 +1,866 @@
+30-May-2025 10:18:23.275 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+30-May-2025 10:18:23.275 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+30-May-2025 10:18:23.278 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2df491be')
+30-May-2025 10:21:04.201 심각 [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/index.jsp]의 [30] 행에서 오류가 발생했습니다.
+The method getBody() is undefined for the type JwtParser
+27:             Claims claims = Jwts.parserBuilder()
+28:                 .setSigningKey(signingKey)
+29:                 .build()
+30:                 .getBody();
+31: 
+32:             isLoggedIn = true;
+33:             username = claims.getSubject();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/index.jsp]의 [30] 행에서 오류가 발생했습니다.
+The method getBody() is undefined for the type JwtParser
+27:             Claims claims = Jwts.parserBuilder()
+28:                 .setSigningKey(signingKey)
+29:                 .build()
+30:                 .getBody();
+31: 
+32:             isLoggedIn = true;
+33:             username = claims.getSubject();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+30-May-2025 10:23:54.587 심각 [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+코드 생성된 자바 파일 [/root/project/webHack_old/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.java]의 [14] 행에서 오류가 발생했습니다.
+Only a type can be imported. org.json.JSONObject resolves to a package
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+코드 생성된 자바 파일 [/root/project/webHack_old/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.java]의 [14] 행에서 오류가 발생했습니다.
+Only a type can be imported. org.json.JSONObject resolves to a package
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+30-May-2025 10:25:27.117 심각 [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+코드 생성된 자바 파일 [/root/project/webHack_old/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.java]의 [14] 행에서 오류가 발생했습니다.
+Only a type can be imported. org.json.JSONObject resolves to a package
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+코드 생성된 자바 파일 [/root/project/webHack_old/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.java]의 [14] 행에서 오류가 발생했습니다.
+Only a type can be imported. org.json.JSONObject resolves to a package
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+30-May-2025 10:25:36.179 심각 [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+코드 생성된 자바 파일 [/root/project/webHack_old/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.java]의 [14] 행에서 오류가 발생했습니다.
+Only a type can be imported. org.json.JSONObject resolves to a package
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+코드 생성된 자바 파일 [/root/project/webHack_old/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.java]의 [14] 행에서 오류가 발생했습니다.
+Only a type can be imported. org.json.JSONObject resolves to a package
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+JSP 파일 [/index.jsp]의 [44] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+41:                 String[] parts = token.split("\\.");
+42:                 if (parts.length >= 2) {
+43:                     String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+44:                     JSONObject payload = new JSONObject(payloadJson);
+45:                     username = payload.optString("sub");
+46:                     isLoggedIn = (username != null && !username.isEmpty());
+47:                 }
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+30-May-2025 10:25:50.972 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+30-May-2025 10:25:50.972 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+30-May-2025 10:25:58.273 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+30-May-2025 10:25:58.273 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+30-May-2025 10:25:58.275 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2db27b46')
+30-May-2025 10:28:08.995 심각 [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [30] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+27:                     .parseClaimsJws(token)
+28:                     .getBody();
+29: 
+30:                 isLoggedIn = true;
+31:                 username = claims.getSubject();
+32: 
+33:             } catch (Exception e) {
+
+
+JSP 파일 [/board/board.jsp]의 [39] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+36:                     String[] parts = token.split("\\.");
+37:                     if (parts.length >= 2) {
+38:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+39:                         JSONObject payload = new JSONObject(payloadJson);
+40:                         username = payload.optString("sub");
+41:                         isLoggedIn = (username != null && !username.isEmpty());
+42:                     }
+
+
+JSP 파일 [/board/board.jsp]의 [39] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+36:                     String[] parts = token.split("\\.");
+37:                     if (parts.length >= 2) {
+38:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+39:                         JSONObject payload = new JSONObject(payloadJson);
+40:                         username = payload.optString("sub");
+41:                         isLoggedIn = (username != null && !username.isEmpty());
+42:                     }
+
+
+JSP 파일 [/board/board.jsp]의 [41] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+38:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+39:                         JSONObject payload = new JSONObject(payloadJson);
+40:                         username = payload.optString("sub");
+41:                         isLoggedIn = (username != null && !username.isEmpty());
+42:                     }
+43:                 } catch (Exception e2) {
+44:                     username = null;
+
+
+JSP 파일 [/board/board.jsp]의 [45] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+42:                     }
+43:                 } catch (Exception e2) {
+44:                     username = null;
+45:                     isLoggedIn = false;
+46:                 }
+47:             }
+48:     } else {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [30] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+27:                     .parseClaimsJws(token)
+28:                     .getBody();
+29: 
+30:                 isLoggedIn = true;
+31:                 username = claims.getSubject();
+32: 
+33:             } catch (Exception e) {
+
+
+JSP 파일 [/board/board.jsp]의 [39] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+36:                     String[] parts = token.split("\\.");
+37:                     if (parts.length >= 2) {
+38:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+39:                         JSONObject payload = new JSONObject(payloadJson);
+40:                         username = payload.optString("sub");
+41:                         isLoggedIn = (username != null && !username.isEmpty());
+42:                     }
+
+
+JSP 파일 [/board/board.jsp]의 [39] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+36:                     String[] parts = token.split("\\.");
+37:                     if (parts.length >= 2) {
+38:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+39:                         JSONObject payload = new JSONObject(payloadJson);
+40:                         username = payload.optString("sub");
+41:                         isLoggedIn = (username != null && !username.isEmpty());
+42:                     }
+
+
+JSP 파일 [/board/board.jsp]의 [41] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+38:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+39:                         JSONObject payload = new JSONObject(payloadJson);
+40:                         username = payload.optString("sub");
+41:                         isLoggedIn = (username != null && !username.isEmpty());
+42:                     }
+43:                 } catch (Exception e2) {
+44:                     username = null;
+
+
+JSP 파일 [/board/board.jsp]의 [45] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+42:                     }
+43:                 } catch (Exception e2) {
+44:                     username = null;
+45:                     isLoggedIn = false;
+46:                 }
+47:             }
+48:     } else {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+30-May-2025 10:28:23.848 심각 [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [32] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+29:                     .parseClaimsJws(token)
+30:                     .getBody();
+31: 
+32:                 isLoggedIn = true;
+33:                 username = claims.getSubject();
+34: 
+35:             } catch (Exception e) {
+
+
+JSP 파일 [/board/board.jsp]의 [43] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+40:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+41:                         JSONObject payload = new JSONObject(payloadJson);
+42:                         username = payload.optString("sub");
+43:                         isLoggedIn = (username != null && !username.isEmpty());
+44:                     }
+45:                 } catch (Exception e2) {
+46:                     username = null;
+
+
+JSP 파일 [/board/board.jsp]의 [47] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+44:                     }
+45:                 } catch (Exception e2) {
+46:                     username = null;
+47:                     isLoggedIn = false;
+48:                 }
+49:             }
+50:     } else {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [32] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+29:                     .parseClaimsJws(token)
+30:                     .getBody();
+31: 
+32:                 isLoggedIn = true;
+33:                 username = claims.getSubject();
+34: 
+35:             } catch (Exception e) {
+
+
+JSP 파일 [/board/board.jsp]의 [43] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+40:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+41:                         JSONObject payload = new JSONObject(payloadJson);
+42:                         username = payload.optString("sub");
+43:                         isLoggedIn = (username != null && !username.isEmpty());
+44:                     }
+45:                 } catch (Exception e2) {
+46:                     username = null;
+
+
+JSP 파일 [/board/board.jsp]의 [47] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+44:                     }
+45:                 } catch (Exception e2) {
+46:                     username = null;
+47:                     isLoggedIn = false;
+48:                 }
+49:             }
+50:     } else {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+30-May-2025 10:28:28.794 심각 [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [32] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+29:                     .parseClaimsJws(token)
+30:                     .getBody();
+31: 
+32:                 isLoggedIn = true;
+33:                 username = claims.getSubject();
+34: 
+35:             } catch (Exception e) {
+
+
+JSP 파일 [/board/board.jsp]의 [43] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+40:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+41:                         JSONObject payload = new JSONObject(payloadJson);
+42:                         username = payload.optString("sub");
+43:                         isLoggedIn = (username != null && !username.isEmpty());
+44:                     }
+45:                 } catch (Exception e2) {
+46:                     username = null;
+
+
+JSP 파일 [/board/board.jsp]의 [47] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+44:                     }
+45:                 } catch (Exception e2) {
+46:                     username = null;
+47:                     isLoggedIn = false;
+48:                 }
+49:             }
+50:     } else {
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/board/board.jsp]의 [32] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+29:                     .parseClaimsJws(token)
+30:                     .getBody();
+31: 
+32:                 isLoggedIn = true;
+33:                 username = claims.getSubject();
+34: 
+35:             } catch (Exception e) {
+
+
+JSP 파일 [/board/board.jsp]의 [43] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+40:                         String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+41:                         JSONObject payload = new JSONObject(payloadJson);
+42:                         username = payload.optString("sub");
+43:                         isLoggedIn = (username != null && !username.isEmpty());
+44:                     }
+45:                 } catch (Exception e2) {
+46:                     username = null;
+
+
+JSP 파일 [/board/board.jsp]의 [47] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+44:                     }
+45:                 } catch (Exception e2) {
+46:                     username = null;
+47:                     isLoggedIn = false;
+48:                 }
+49:             }
+50:     } else {
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+30-May-2025 10:33:48.006 심각 [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [WriteProcess]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/write/writeProcess.jsp]의 [34] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+31:             .parseClaimsJws(token)
+32:             .getBody();
+33: 
+34:         isLoggedIn = true;
+35:         username = claims.getSubject();
+36: 
+37:     } catch (Exception e) {
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [42] 행에서 오류가 발생했습니다.
+Base64 cannot be resolved
+39:         try {
+40:             String[] parts = token.split("\\.");
+41:             if (parts.length >= 2) {
+42:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+43:                 JSONObject payload = new JSONObject(payloadJson);
+44:                 username = payload.optString("sub");
+45:                 isLoggedIn = (username != null && !username.isEmpty());
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [43] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+40:             String[] parts = token.split("\\.");
+41:             if (parts.length >= 2) {
+42:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+43:                 JSONObject payload = new JSONObject(payloadJson);
+44:                 username = payload.optString("sub");
+45:                 isLoggedIn = (username != null && !username.isEmpty());
+46:             }
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [43] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+40:             String[] parts = token.split("\\.");
+41:             if (parts.length >= 2) {
+42:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+43:                 JSONObject payload = new JSONObject(payloadJson);
+44:                 username = payload.optString("sub");
+45:                 isLoggedIn = (username != null && !username.isEmpty());
+46:             }
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [45] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+42:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+43:                 JSONObject payload = new JSONObject(payloadJson);
+44:                 username = payload.optString("sub");
+45:                 isLoggedIn = (username != null && !username.isEmpty());
+46:             }
+47:         } catch (Exception e2) {
+48:             username = null;
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [49] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+46:             }
+47:         } catch (Exception e2) {
+48:             username = null;
+49:             isLoggedIn = false;
+50:         }
+51:     }
+52: }
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/write/writeProcess.jsp]의 [34] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+31:             .parseClaimsJws(token)
+32:             .getBody();
+33: 
+34:         isLoggedIn = true;
+35:         username = claims.getSubject();
+36: 
+37:     } catch (Exception e) {
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [42] 행에서 오류가 발생했습니다.
+Base64 cannot be resolved
+39:         try {
+40:             String[] parts = token.split("\\.");
+41:             if (parts.length >= 2) {
+42:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+43:                 JSONObject payload = new JSONObject(payloadJson);
+44:                 username = payload.optString("sub");
+45:                 isLoggedIn = (username != null && !username.isEmpty());
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [43] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+40:             String[] parts = token.split("\\.");
+41:             if (parts.length >= 2) {
+42:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+43:                 JSONObject payload = new JSONObject(payloadJson);
+44:                 username = payload.optString("sub");
+45:                 isLoggedIn = (username != null && !username.isEmpty());
+46:             }
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [43] 행에서 오류가 발생했습니다.
+JSONObject cannot be resolved to a type
+40:             String[] parts = token.split("\\.");
+41:             if (parts.length >= 2) {
+42:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+43:                 JSONObject payload = new JSONObject(payloadJson);
+44:                 username = payload.optString("sub");
+45:                 isLoggedIn = (username != null && !username.isEmpty());
+46:             }
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [45] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+42:                 String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+43:                 JSONObject payload = new JSONObject(payloadJson);
+44:                 username = payload.optString("sub");
+45:                 isLoggedIn = (username != null && !username.isEmpty());
+46:             }
+47:         } catch (Exception e2) {
+48:             username = null;
+
+
+JSP 파일 [/write/writeProcess.jsp]의 [49] 행에서 오류가 발생했습니다.
+isLoggedIn cannot be resolved to a variable
+46:             }
+47:         } catch (Exception e2) {
+48:             username = null;
+49:             isLoggedIn = false;
+50:         }
+51:     }
+52: }
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:542)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:371)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:343)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:329)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:376)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:324)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1793)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)

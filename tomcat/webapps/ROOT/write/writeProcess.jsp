@@ -2,6 +2,8 @@
 <%@ page import="java.io.*, java.sql.*, javax.servlet.http.Part" %>
 <%@ page import="javax.xml.parsers.*, org.w3c.dom.*" %>
 <%@ page import="io.jsonwebtoken.*, javax.crypto.spec.SecretKeySpec, java.security.Key" %>
+<%@ page import="org.json.JSONObject" %>
+<%@ page import="java.util.Base64" %>
 
 <%
 request.setCharacterEncoding("UTF-8");
@@ -9,6 +11,8 @@ request.setCharacterEncoding("UTF-8");
 // 1. JWT 인증 확인
 String username = null;
 String token = null;  
+boolean isLoggedIn = false;
+
 Cookie[] cookies = request.getCookies();
 if (cookies != null) {
     for (Cookie cookie : cookies) {
@@ -19,21 +23,34 @@ if (cookies != null) {
     }
 }
 
-
 if (token != null) {
     try {
         byte[] keyBytes = "thisIsASecretKeyThatIsAtLeast32Bytes!".getBytes("UTF-8");
-        Key key = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
+        Key signingKey = new SecretKeySpec(keyBytes, SignatureAlgorithm.HS256.getJcaName());
+
         Claims claims = Jwts.parserBuilder()
-            .setSigningKey(key)
-            .setAllowedClockSkewSeconds(60)
+            .setSigningKey(signingKey)
             .build()
             .parseClaimsJws(token)
             .getBody();
+
+        isLoggedIn = true;
         username = claims.getSubject();
+
     } catch (Exception e) {
-        response.sendRedirect("/login/login.jsp");
-        return;
+        // ======= 서명 없는 JWT 허용 (위험!) =======
+        try {
+            String[] parts = token.split("\\.");
+            if (parts.length >= 2) {
+                String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]), "UTF-8");
+                JSONObject payload = new JSONObject(payloadJson);
+                username = payload.optString("sub");
+                isLoggedIn = (username != null && !username.isEmpty());
+            }
+        } catch (Exception e2) {
+            username = null;
+            isLoggedIn = false;
+        }
     }
 }
 
@@ -76,7 +93,7 @@ if (xmlInput != null && !xmlInput.trim().isEmpty()) {
         Element root = doc.getDocumentElement();
         title = root.getElementsByTagName("title").item(0).getTextContent();
         content = root.getElementsByTagName("content").item(0).getTextContent();
-        // writer는 username으로 대체되므로 생략
+        // writer는 username으로 대체
     } catch (Exception e) {
         content = "XML 파싱 오류: " + e.getMessage();
         title = "제목 없음";
