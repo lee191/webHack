@@ -60,7 +60,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
 %>
 <script>
     alert("비밀번호 변경 완료");
-    location.href = "/login/login.jsp";
+    location.href = "/mobile/login/login.jsp";
 </script>
 <%
     } catch (Exception e) {

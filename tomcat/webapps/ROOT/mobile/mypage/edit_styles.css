@@ -1,118 +1,111 @@
+/* 기본 레이아웃 및 배경 */
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #1d2b64, #f8cdda);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    color: #fff;
+    min-height: 100vh;
 }
 
+/* 폼 컨테이너 */
 .container {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    padding: 40px;
+    background: #1e1e1e;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    width: 400px;
-    text-align: center;
-}
-
-.container h1 {
-    margin-bottom: 30px;
-    font-size: 2em;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-}
-
-label {
-    display: block;
-    text-align: left;
-    margin-bottom: 6px;
-    font-weight: bold;
-    color: #f0f0f0;
-}
-
-textarea {
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+    padding: 20px 16px 16px;
     width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 제목 */
+.container h1 {
+    font-size: 1.6em;
+    color: #ffdd57;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* 라벨 */
+label {
+    font-size: 1em;
+    color: #ffdd57;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+/* 텍스트 입력창 */
+textarea {
+    width: 95%;
+    height: 120px;         /* ✅ 기본 높이 */
+    min-height: 80px;      /* ✅ 너무 작아지지 않도록 제한 */
+    max-height: 300px;     /* ✅ 사용자 리사이즈 제한 */
+    resize: vertical;      /* 수직 리사이즈만 허용 */
+    background: #252525;
+    color: #fce98d;
+    font-size: 1em;
     padding: 12px;
     border-radius: 8px;
     border: none;
-    resize: vertical;
-    min-height: 100px;
-    margin-bottom: 20px;
-    font-size: 1em;
-    background-color: #f9f9f9;
-    color: #000;
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);
+    transition: background 0.3s, box-shadow 0.2s;
+}
+textarea::placeholder {
+    color: #aaa;
+}
+textarea:focus {
+    outline: 2px solid #ffdd57;
+    background: #181818;
 }
 
+/* 버튼 */
 button {
     width: 100%;
-    padding: 12px;
-    background-color: #7e57c2;
-    color: white;
+    padding: 14px;
+    background-color: #ffdd57;
+    color: #222;
     border: none;
     border-radius: 8px;
-    font-size: 1.1em;
+    font-size: 1.05em;
     font-weight: bold;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
-
 button:hover {
-    background-color: #5e35b1;
-    transform: scale(1.03);
+    background-color: #fbc02d;
+    transform: scale(1.02);
 }
 
-/* 반응형 레이아웃 */
-@media (max-width: 700px) {
+/* 모바일 반응형 */
+@media (max-width: 520px) {
     .container {
-        width: 95vw;
-        padding: 18px 6px;
-        border-radius: 8px;
+        max-width: 92vw;
+        padding: 16px 10px;
     }
     .container h1 {
         font-size: 1.3em;
-        margin-bottom: 18px;
     }
-    label {
-        font-size: 1em;
-    }
-    textarea {
-        font-size: 0.98em;
-        padding: 10px;
-        min-height: 70px;
-    }
-    button {
-        font-size: 1em;
-        padding: 10px;
-        border-radius: 7px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 15px;
-    }
-    .container {
-        width: 99vw;
-        padding: 10px 2px;
-        border-radius: 6px;
-    }
-    .container h1 {
-        font-size: 1.05em;
-        margin-bottom: 10px;
-    }
-    textarea {
+    label, button {
         font-size: 0.96em;
-        padding: 8px;
-        min-height: 50px;
     }
     button {
-        font-size: 0.98em;
-        padding: 8px;
-        border-radius: 6px;
+        padding: 12px;
+    }
+    textarea {
+        height: 80px;
+        font-size: 0.95em;
+        padding: 10px;
     }
 }

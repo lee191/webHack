@@ -42,7 +42,7 @@
                 border-radius: 18px; padding: 10px 18px; font-size:1em;
                 box-shadow:0 2px 8px #0002; text-decoration:none;
                 transition:background 0.18s, color 0.18s, transform 0.13s;
-            " onmouseover="this.style.background='#e53935';this.style.color='#fff';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#ffe082';this.style.color='#232323';this.style.transform='none';">
+            " onmouseover="this.style.background='#e53935';this.style.color='#fffde7';this.style.transform='scale(1.04)';" onmouseout="this.style.background='#ffe082';this.style.color='#232323';this.style.transform='none';">
                 <span style="font-size:1.2em;">🔑</span> 비밀번호 변경
             </a>
             <a href="/mobile/signup/signup.jsp" style="

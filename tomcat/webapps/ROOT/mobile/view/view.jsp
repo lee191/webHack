@@ -47,7 +47,7 @@ try {
             <span class="view-date">🕒 <%= created %></span>
             <span class="view-id">#<%= postId %></span>
         </div>
-        <div class="view-content"><pre><%= content %></pre></div>
+        <div class="view-content"><%= content.replaceAll("\n", "<br>") %></div>
         <% if (filename != null && !filename.isEmpty()) { %>
         <div class="view-file">
             <span>📎 첨부파일: </span>

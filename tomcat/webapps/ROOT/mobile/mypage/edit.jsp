@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>회원정보 수정</title>
-    <link rel="stylesheet" href="/mypage/edit_styles.css">
+    <link rel="stylesheet" href="/mobile/mypage/edit_styles.css">
 </head>
 <body>
     <div class="container">

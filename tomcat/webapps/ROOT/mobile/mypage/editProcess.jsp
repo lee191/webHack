@@ -54,12 +54,12 @@
                 username = claims.getSubject();
             }
         } catch (Exception e) {
-            response.sendRedirect("/login/login.jsp");
+            response.sendRedirect("/mobile/login/login.jsp");
             return;
         }
     }
     if (username == null) {
-        response.sendRedirect("/login/login.jsp");
+        response.sendRedirect("/mobile/login/login.jsp");
         return;
     }
 
@@ -125,5 +125,5 @@
         return;
     }
 
-    out.println("<script>alert('소개글이 수정되었습니다.'); location.href='/mypage/mypage.jsp';</script>");
+    out.println("<script>alert('소개글이 수정되었습니다.'); location.href='/mobile/mypage/mypage.jsp';</script>");
 %>
