@@ -71,4 +71,14 @@
       <url-pattern>/admin/</url-pattern>
   </filter-mapping>
 
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>WEB-INF Block</web-resource-name>
+      <url-pattern>/WEB-INF/*</url-pattern>
+      <url-pattern>/mobile/WEB-INF/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint/>
+  </security-constraint>
+
 </web-app>
+

@@ -1,0 +1,131 @@
+/* 모바일 인트로 영역 */
+.mobile-intro {
+    text-align: center;
+    margin: 0 0 18px 0;
+}
+.mobile-intro h1 {
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: #ffe082;
+    margin-bottom: 4px;
+    font-family: 'Jua', 'Segoe UI', sans-serif;
+}
+.mobile-intro p {
+    font-size: 1.08em;
+    color: #fff9c4;
+    margin-bottom: 10px;
+}
+.mobile-logo {
+    width: 240px;
+    height: 120px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px #0004;
+    border: 3px solid #ffe082;
+    margin: 0 auto 12px auto;
+    display: block;
+    background: #0004;
+    object-fit: contain;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.mobile-logo:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 8px 28px #e5393533;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* 모바일 하단 고정 네비게이션 */
+.mobile-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    z-index: 11;
+    border-top: 1px solid #444;
+}
+.mobile-nav a {
+    color: #ffe082;
+    text-decoration: none;
+    font-size: 1.05em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+    padding: 2px 0;
+}
+.mobile-nav a.active {
+    color: #fff;
+    font-weight: bold;
+}
+.mobile-nav svg {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 2px;
+}
+
+
+/* 모바일 플로팅 액션버튼 */
+.mobile-fab {
+    position: fixed;
+    right: 18px;
+    bottom: 70px;
+    background: #ffe082;
+    color: #222;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    z-index: 12;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.mobile-fab:hover {
+    background: #ffd54f;
+}
+
+/* 모바일용 기본 레이아웃 */
+.mobile-main {
+    padding-bottom: 70px; /* 하단 네비게이션 영역 확보 */
+    min-height: 80vh;
+}
+
+/* 모바일용 인사말 */
+.mobile-welcome {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 32px 0 18px 0;
+    font-weight: 600;
+}
+
+/* 모바일용 푸터 */
+.mobile-footer {
+    position: fixed;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    background: #222;
+    color: #ffe082;
+    text-align: center;
+    padding: 12px 0 8px 0;
+    font-size: 1em;
+    z-index: 10;
+    border-top: 1px solid #333;
+}
+

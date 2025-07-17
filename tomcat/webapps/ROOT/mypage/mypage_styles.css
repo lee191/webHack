@@ -85,3 +85,62 @@ body {
     color: #000000;
     font-size: 1em;
 }
+
+/* 반응형 레이아웃 */
+@media (max-width: 900px) {
+    .profile-header {
+        height: 140px;
+    }
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+        bottom: -45px;
+    }
+    .profile-content {
+        margin-top: 60px;
+    }
+    .profile-content h2 {
+        font-size: 1.3em;
+    }
+    .intro-box {
+        max-width: 95%;
+        font-size: 0.98em;
+        padding: 10px;
+    }
+    .button-group a {
+        padding: 8px 12px;
+        font-size: 0.98em;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+    .profile-header {
+        height: 90px;
+    }
+    .profile-pic {
+        width: 60px;
+        height: 60px;
+        bottom: -30px;
+    }
+    .profile-content {
+        margin-top: 36px;
+    }
+    .profile-content h2 {
+        font-size: 1.05em;
+    }
+    .intro-box {
+        max-width: 99%;
+        font-size: 0.95em;
+        padding: 7px;
+    }
+    .button-group {
+        gap: 10px;
+    }
+    .button-group a {
+        padding: 7px 6px;
+        font-size: 0.95em;
+    }
+}

@@ -83,6 +83,7 @@
 <div class="top-bar">
     <div class="search-container">
         <form action="board.jsp" method="get">
+            <!-- [보안] 검색어 입력값을 HTML 이스케이프 처리하여 XSS 방지 -->
             <input type="text" name="query" placeholder="검색어를 입력하세요" value="<%= StringEscapeUtils.escapeHtml4(query) %>" required>
             <button type="submit">검색</button>
         </form>
@@ -96,6 +97,7 @@
 </div>
 
 <% if (isSearch) { %>
+    <!-- [보안] 검색어 출력 시 HTML 이스케이프 처리하여 XSS 방지 -->
     <h2>"<%= StringEscapeUtils.escapeHtml4(query) %>" 검색 결과</h2>
 <% } %>
 
@@ -130,6 +132,7 @@
         int count = 0;
         while (rs.next()) {
             int postId = rs.getInt("id");
+            // [보안] DB에서 읽은 모든 출력값에 HTML 이스케이프 적용하여 XSS 방지
             String writer = StringEscapeUtils.escapeHtml4(rs.getString("username"));
             String title = StringEscapeUtils.escapeHtml4(rs.getString("title"));
             String created = StringEscapeUtils.escapeHtml4(rs.getString("created_at"));

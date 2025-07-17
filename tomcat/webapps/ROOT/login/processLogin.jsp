@@ -47,9 +47,11 @@ String username = "";
 try {
     Class.forName("com.mysql.cj.jdbc.Driver");
     try (Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword)) {
+        // SQL Injection 방지를 위해 PreparedStatement 사용(파라미터 바인딩)
+        // 사용자 입력값을 쿼리 내에 직접 연결하지 않고 ?로 바인딩하여 SQLi 공격을 차단
         String sql = "SELECT username, password FROM users WHERE username = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, id);
+            pstmt.setString(1, id); // 사용자 입력값(id) 파라미터로 바인딩 → SQLi 방지
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     String dbHashed = rs.getString("password");
@@ -60,6 +62,7 @@ try {
         }
     }
 } catch (Exception e) {
+    // 로그인 과정에서 발생한 예외를 외부(사용자)에게 노출하지 않고, 서버 로그에만 기록함 → 시스템 정보 노출 및 공격 탐지 회피
     getServletContext().log("Login error", e);
 }
 
@@ -97,7 +100,7 @@ if (isValidUser) {
     failCount++;
     session.setAttribute("failCount", failCount);
     if (failCount >= 5) {
-        session.setAttribute("lockTime", now + (10 * 60 * 100)); 
+        session.setAttribute("lockTime", now + (10 * 60 * 1000)); 
         out.println("<script>alert('로그인 5회 실패로 10분간 차단됩니다.'); history.back();</script>");
     } else {
         out.println("<script>alert('아이디 또는 비밀번호가 잘못되었습니다.'); history.back();</script>");

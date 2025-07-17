@@ -68,23 +68,27 @@ String xmlInput = request.getParameter("xml");
 // 4. 파일 업로드 처리
 String uploadPath = application.getRealPath("/WEB-INF/uploads");
 File uploadDir = new File(uploadPath);
+// [보안] 업로드 경로가 존재하지 않을 경우 생성 (WEB-INF 하위로 설정해 웹에서 직접 접근 불가)
 if (!uploadDir.exists()) uploadDir.mkdirs();
 
 Part filePart = request.getPart("file");
 if (filePart != null && filePart.getSize() > 0) {
-    String original = new File(filePart.getSubmittedFileName()).getName(); // 디렉토리 제거
+    // [보안] 원본 파일명에서 디렉토리 경로 제거하여 디렉토리 트래버설 방지
+    String original = new File(filePart.getSubmittedFileName()).getName();
     String ext = "";
     int i = original.lastIndexOf(".");
     if (i > 0) ext = original.substring(i).toLowerCase();
 
+    // [보안] 허용된 확장자(화이트리스트)만 업로드 가능하도록 제한
     List<String> whitelist = Arrays.asList(".jpg", ".jpeg", ".png", ".pdf", ".txt", ".zip");
     if (!whitelist.contains(ext)) {
         out.println("<script>alert('허용되지 않은 파일 형식입니다.'); history.back();</script>");
         return;
     }
 
-    // 무작위 파일명 저장
+    // [보안] 업로드 시 저장 파일명을 무작위(UUID)로 변경하여 원본 파일명 및 경로 노출/중복/덮어쓰기 방지
     filename = UUID.randomUUID().toString() + ext;
+    // [보안] 지정된 업로드 디렉토리 내에만 저장 (디렉토리 탈출 방지)
     filePart.write(new File(uploadDir, filename).getAbsolutePath());
 }
 

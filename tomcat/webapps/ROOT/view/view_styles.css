@@ -70,3 +70,44 @@ a.nav-link:hover {
     background-color: #5e35b1;
     transform: scale(1.03);
 }
+
+/* 반응형 레이아웃 */
+@media (max-width: 900px) {
+    table {
+        width: 98%;
+        font-size: 1em;
+    }
+    h1 {
+        font-size: 2em;
+        margin-top: 24px;
+    }
+    a.nav-link {
+        font-size: 1em;
+        padding: 9px 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 1.3em;
+        margin-top: 16px;
+        margin-bottom: 12px;
+    }
+    table {
+        width: 100%;
+        font-size: 0.98em;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    table th, table td {
+        padding: 10px 8px;
+    }
+    a.nav-link {
+        font-size: 0.98em;
+        padding: 8px 8px;
+        margin-top: 12px;
+    }
+}

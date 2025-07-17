@@ -55,15 +55,20 @@ if (!isAdmin) {
 
 <%
 String target = request.getParameter("host");
+// [보안] 호스트명은 영문, 숫자, 점, 하이픈만 허용 (길이 1~253자)
+// [조치] 정규표현식 기반으로 허용된 형식만 입력 가능하도록 제한 → 명령어 인젝션 차단
 Pattern hostPattern = Pattern.compile("^[a-zA-Z0-9.-]{1,253}$");
 
 if ("POST".equalsIgnoreCase(request.getMethod()) && target != null && !target.isEmpty()) {
     if (!hostPattern.matcher(target).matches()) {
+        // [보안] 정규식 검증에 실패한 경우 즉시 요청 중단 (악의적 입력 차단)
         out.println("<script>alert('허용되지 않은 형식의 호스트명입니다.'); history.back();</script>");
         return;
     }
 
     try {
+        // [보안] 외부 입력값이 명령행 파라미터로 전달되므로, 정규표현식으로 사전 필터링 필수
+        // [조치] 명령어 조작, 명령어 추가(인젝션) 등 방지 목적
         ProcessBuilder pb = new ProcessBuilder("mysqladmin", "-h", target, "-u", dbUser, "-p" + dbPass, "ping");
         pb.redirectErrorStream(true);
         Process proc = pb.start();

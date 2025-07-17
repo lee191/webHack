@@ -139,4 +139,74 @@ pre {
         width: 90%;
         padding: 30px 20px;
     }
+    h1, h2 {
+        margin-top: 24px;
+        font-size: 1.3em;
+    }
+    .navbar {
+        flex-direction: column;
+        padding: 12px 2vw;
+        gap: 8px;
+        font-size: 1em;
+    }
+    .logo {
+        font-size: 1.1em;
+    }
+    .navbar-right a {
+        margin-left: 10px;
+        font-size: 0.98em;
+    }
+    label {
+        font-size: 1em;
+    }
+    input[type="text"],
+    input[type="file"],
+    textarea {
+        font-size: 0.98em;
+        padding: 10px;
+    }
+    button {
+        font-size: 1em;
+        padding: 10px;
+    }
+    .footer {
+        font-size: 0.95em;
+        padding: 12px 0;
+    }
+    pre {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        padding: 14px 2vw;
+        gap: 10px;
+        font-size: 1.08em;
+    }
+    .logo {
+        font-size: 1.3em;
+    }
+    .navbar-right a {
+        margin-left: 12px;
+        font-size: 1em;
+    }
+    form {
+        width: 98%;
+        padding: 24px 8px;
+    }
+    h1, h2 {
+        font-size: 1.5em;
+        margin-top: 28px;
+    }
+    button {
+        font-size: 1.05em;
+        padding: 11px;
+    }
+    .footer {
+        font-size: 1em;
+        padding: 14px 0;
+    }
 }

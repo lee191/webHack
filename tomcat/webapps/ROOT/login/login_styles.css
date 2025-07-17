@@ -128,3 +128,76 @@ a:hover {
     flex-direction: column;
     align-items: center;
 }
+
+/* 반응형 레이아웃 */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        padding: 14px 2vw;
+        gap: 10px;
+        font-size: 1.08em;
+    }
+    .logo {
+        font-size: 1.3em;
+    }
+    .navbar-right a {
+        font-size: 1em;
+        margin-left: 12px;
+    }
+    form {
+        width: 90%;
+        padding: 30px 10px;
+    }
+    h1 {
+        font-size: 1.7em;
+        margin-top: 24px;
+    }
+    button {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+    .navbar {
+        flex-direction: column;
+        padding: 10px 2vw;
+        gap: 8px;
+        font-size: 1em;
+    }
+    .logo {
+        font-size: 1.1em;
+    }
+    .navbar-right a {
+        font-size: 0.98em;
+        margin-left: 8px;
+    }
+    form {
+        width: 98%;
+        padding: 18px 4px;
+    }
+    h1 {
+        font-size: 1.2em;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    button {
+        font-size: 0.98em;
+        padding: 9px;
+    }
+    label {
+        font-size: 0.98em;
+    }
+    input[type="text"],
+    input[type="password"] {
+        font-size: 0.98em;
+        padding: 10px;
+    }
+    a {
+        font-size: 0.98em;
+        margin-top: 14px;
+    }
+}
